@@ -1,0 +1,147 @@
+
+\makeatletter
+\newif\ifpgfshapebaselesstrianglehasinline
+\newif\ifpgfshapebaselesstriangleclose
+\pgfkeys{/pgf/.cd,
+  baseless triangle apex angle/.style={/pgf/isosceles triangle apex angle=#1},
+  baseless triangle inline/.is if=pgfshapebaselesstrianglehasinline,
+  baseless triangle has base/.is if=pgfshapebaselesstriangleclose
+}
+
+\pgfdeclareshape{baseless triangle}{
+  % Copy some stuff from the isosecles triangle
+  \inheritsavedanchors[from={isosceles triangle}]
+  \inheritanchor[from={isosceles triangle}]{center}
+  \inheritanchor[from={isosceles triangle}]{north}
+  \inheritanchor[from={isosceles triangle}]{south}
+  \inheritanchor[from={isosceles triangle}]{east}
+  \inheritanchor[from={isosceles triangle}]{west}
+  \inheritanchorborder[from={isosceles triangle}]
+  \backgroundpath{%
+    % The isoceles triangle defines lots of parameters
+    % in the \trianglepoints macro.
+        \trianglepoints%
+        {%
+            \pgftransformshift{\centerpoint}%
+            \pgftransformrotate{\rotate}%
+            % This bit is a bit of a kludge to ensure the inline
+            % is at the top of the figure.
+            \pgftransformyscale{cos(\rotate)}%
+            \pgfpathmoveto{\lowerleft}%
+            \pgfpathlineto{\apex}%
+            \pgfpathlineto{\lowerleft\pgf@y=-\pgf@y}%
+            % Close the base?
+            \ifpgfshapebaselesstriangleclose%
+              \pgfpathclose%
+            \fi%
+            % Draw the inline?
+            \ifpgfshapebaselesstrianglehasinline
+              \pgfpointdiff{\lowerleft}%
+                 {\pgfpointlineattime{0.125}{\lowerleft}{\lowerleft\pgf@y=-\pgf@y}}%
+                \pgfgetlastxy{\x}{\y}%
+                \pgfmathveclen{\x}{\y}%
+                \let\inlineshift=\pgfmathresult%
+            % Calculate where the inline hits the sloped line of the triangle.
+            \pgfmathparse{\inlineshift/2/sin(\pgfkeysvalueof{/pgf/isosceles triangle apex angle}/2)}%
+            \let\inlineendshift=\pgfmathresult
+            \pgfpathmoveto{\pgfpointadd{\pgfpoint{0pt}{-\inlineshift}}{\lowerleft}}%
+            \pgfpathlineto{\pgfpointlineatdistance{\inlineendshift}{\apex}{\lowerleft}\pgf@y=-\pgf@y}%
+        \fi%
+    }
+    }
+}
+
+\begin{center}
+\begin{tikzpicture}[node distance=1.6cm,>=stealth',bend angle=45]
+
+	\tikzstyle{circ}=[
+		circle,
+		thick,
+		draw=black,
+		fill=white,
+		minimum size=6mm
+	]
+
+	\tikzstyle{rect}=[
+		rectangle,
+		thick,
+		draw=black,
+  		fill=white,
+  		minimum size=6mm
+  	]
+  			  
+	\tikzset{
+		support/.style={
+			regular polygon,
+			regular polygon sides=3,
+			shape border rotate=90,
+			thick,
+        	draw=black,
+	        fill=white,
+        	minimum height=6mm,
+        	node distance=0.6cm
+    	}
+    }
+    
+    \tikzset{	
+		refute/.style={
+	    	draw,
+	    	thick,
+	    	baseless triangle,
+ 	   		baseless triangle apex angle=60,
+ 	   		shape border rotate=180,
+ 	   		baseless triangle inline=false,
+ 	   		baseless triangle has base=false,
+ 	   		node distance=0.6cm
+  		}
+  	}
+
+
+
+	\node [circ,tokens=1] (1) [label=above right:$_1$] {};
+	
+	\node [circ,tokens=2] (2) [right of=1,label=above right:$_2$,label=below right:$\infty$] {};
+	\node [support] 	  (2a)[left of=2] {};	
+	
+	\node [circ,tokens=1] (3) [below left of=1,label=above right:$_3$] {};	
+	\node [circ,tokens=2] (4) [below of=3,label=above right:$_4$,label=below right:\footnotesize{\P}] {};
+
+	\node [circ,tokens=1] (5) [below right of=1,label=above right:$_5$] {};
+	
+
+
+	\node [rect,tokens=1] (6) [below of=5,label=above right:$_6$] {};	
+
+	\node [circ] (7)  [right of=6,label=above right:$_7$] {$\circ$};
+	\node [refute] (7a)  [left of=7] {};
+
+	\draw[post] (3)-|(1)  ;
+	\draw[post] (5)-|(1)  ;
+	\draw[post] (4)--(3)  ;
+	\draw[post] (6)--(5)  ;
+	\draw[post] (2a)--(1)  ;
+	\draw[post] (7a)--(6)  ;
+	
+ 
+      
+\end{tikzpicture}
+\end{center}
+
+\begin{tabular}{l l}
+\begin{minipage}{0.5\textwidth}
+\begin{enumerate}
+	\item[$^1$] \footnotesize{Alice is a British citizen}
+	\item[$^2$] \footnotesize{Alice has a British passport}
+	\item[$^3$] \footnotesize{A person born in a British territory will be a British citizen}
+	\item[$^4$] \footnotesize{British Overseas Territories Act 2002}
+\end{enumerate}
+\end{minipage}
+
+\begin{minipage}{0.5\textwidth}
+\begin{enumerate}
+	\item[$^5$] \footnotesize{Alice was born in Bermuda}
+	\item[$^6$] \footnotesize{Alice's parents testify that she was born in Bermuda}
+	\item[$^7$] \footnotesize{Alice's parents' testimony could be biased in her favour}
+\end{enumerate}
+\end{minipage}
+\end{tabular}

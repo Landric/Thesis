@@ -1,0 +1,106 @@
+\chapter{Argumentation on the Social Web Ontology}
+\label{appendix:aswo}
+
+\begin{verbatim}
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://tomblount.co.uk/aswo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://tomblount.co.uk/aswo#">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.arg.dundee.ac.uk/aif</Import>
+    <Import>http://rdfs.org/sioc/ns#</Import>
+    <Declaration>
+        <Class IRI="Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PersonalConflict"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PersonalSupport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="attacked_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="attacks_persona"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="persona_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="supported_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="supports_persona"/>
+    </Declaration>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="attacks_persona"/>
+        <ObjectProperty IRI="attacked_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="supported_by"/>
+        <ObjectProperty IRI="supports_persona"/>
+    </InverseObjectProperties>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="attacks_persona"/>
+    </ReflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="attacked_by"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="attacks_persona"/>
+        <Class IRI="http://www.arg.dundee.ac.uk/aif#I-node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="persona_of"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="supported_by"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="supports_persona"/>
+        <Class IRI="http://www.arg.dundee.ac.uk/aif#I-node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="attacked_by"/>
+        <Class IRI="http://www.arg.dundee.ac.uk/aif#I-node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="attacks_persona"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="persona_of"/>
+        <Class IRI="http://rdfs.org/sioc/ns#UserAccount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="supported_by"/>
+        <Class IRI="http://www.arg.dundee.ac.uk/aif#NegStatement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="supports_persona"/>
+        <Class IRI="Persona"/>
+    </ObjectPropertyRange>
+</Ontology>
+\end{verbatim}

@@ -1,0 +1,252 @@
+\chapter{Raw Data}
+\label{raw}
+\section{API Results}
+\label{raw:api}
+This section shows the raw data received from the public APIs of YouTube, Twitter and Facebook. While broadly similar, each has its own structure and examples of unique content.
+
+\subsection{YouTube}
+\label{raw:api:youtube}
+
+Of particular note on the data received from the YouTube API is the links to related content, as well as the typing of some elements.
+\begin{lstlisting}[breaklines]
+{
+    "id": {
+        "$t": "http://gdata.youtube.com/feeds/api/videos/7LwoudGfug0/comments/O28p3HYaOlOwc3mEsWWbkA9R72LM4NOMtO7gsdpIMuI"
+    },
+    "published": {
+        "$t": "2013-10-26T00:57:42.000Z"
+    },
+    "updated": {
+        "$t": "2013-10-26T00:57:42.000Z"
+    },
+    "category": [
+    {
+        "scheme": "http://schemas.google.com/g/2005#kind",
+        "term": "http://gdata.youtube.com/schemas/2007#comment"
+    }
+    ],
+    "title": {
+        "$t": "So by that logic ...",
+        "type": "text"
+    },
+    "content": {
+        "$t": "So by that logic people who have never been in accidents don't need car \ninsurance? Or isn't that what insurance is supposed to pay for, the \nunexpected? I'll admit Obamacare isn't a great system because it still \nrelies on private insurance, single payer systems in Europe consistently \nperform better than ours by almost every measure, cost effectiveness, \ninfant mortality, life expectancy. I don't agree with us maintaining a \ngigantic military, but I don't get to opt out from military spending.",
+        "type": "text"
+    },
+    "link": [
+     {
+        "rel": "related",
+        "type": "application/atom+xml",
+        "href": "https://gdata.youtube.com/feeds/api/videos/7LwoudGfug0"
+     },
+     {
+        "rel": "alternate",
+        "type": "text/html",
+        "href": "https://www.youtube.com/watch?v=7LwoudGfug0"
+     },
+     {
+        "rel": "self",
+        "type": "application/atom+xml",
+        "href": "https://gdata.youtube.com/feeds/api/videos/7LwoudGfug0/comments/O28p3HYaOlOwc3mEsWWbkA9R72LM4NOMtO7gsdpIMuI"
+     }
+    ],
+    "author": [
+     {
+        "name": {
+        	"$t": "jager290"
+      	},
+        "uri": {
+        	"$t": "https://gdata.youtube.com/feeds/api/users/_3Tej5a09R2kR5knFWCBkQ"
+      	}
+     }
+    ],
+    "yt$channelId": {
+        "$t": "UC_3Tej5a09R2kR5knFWCBkQ"
+    },
+    "yt$replyCount": {
+        "$t": 0
+    },
+    "yt$videoid": {
+        "$t": "7LwoudGfug0"
+    }
+}
+\end{lstlisting}
+
+\subsection{Twitter}
+\label{raw:api:twitter}
+The data received from Twitter is notable in that it includes a great deal of information about the user posting the tweet (such as number of followers, and even the colour of their profile) as well as the tweet itself.
+\begin{lstlisting}[breaklines]
+{
+    "contributors": null, 
+    "truncated": false, 
+    "text": "@BarackObama PLEASE FOLLOW ME PLEASE", 
+    "in_reply_to_status_id": 390288744235823104, 
+    "id": 390288961450835968, 
+    "favorite_count": 0, 
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>", 
+    "retweeted": false, 
+    "coordinates": null, 
+    "entities": {
+        "symbols": [], 
+        "user_mentions": [
+        {
+            "id": 813286, 
+            "indices": [
+             0, 
+             12
+            ], 
+            "id_str": "813286", 
+            "screen_name": "BarackObama", 
+            "name": "Barack Obama"
+        }
+        ], 
+        "hashtags": [], 
+        "urls": []
+    }, 
+    "in_reply_to_screen_name": "BarackObama", 
+    "id_str": "390288961450835968", 
+    "retweet_count": 0, 
+    "in_reply_to_user_id": 813286, 
+    "favorited": false, 
+    "user": {
+        "follow_request_sent": null, 
+        "profile_use_background_image": true, 
+        "default_profile_image": false, 
+        "id": 1650719012, 
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/431953559425282049/04og3Ngm.jpeg", 
+        "verified": false, 
+        "profile_text_color": "333333", 
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/470405045738274816/o_7QzOEy_normal.jpeg", 
+        "profile_sidebar_fill_color": "DDEEF6", 
+        "entities": {
+            "description": {
+                "urls": []
+            }
+        }, 
+        "followers_count": 7928, 
+        "profile_sidebar_border_color": "FFFFFF", 
+        "id_str": "1650719012", 
+        "profile_background_color": "ACDED6", 
+        "listed_count": 34, 
+        "is_translation_enabled": false, 
+        "utc_offset": -14400, 
+        "statuses_count": 18175, 
+        "description": "I once saw michael clifford walk out of his tour bus and waVE TO US \u203a\u25e1\u0941\u2039", 
+        "friends_count": 5624, 
+        "location": "\u00bc \u261a 0/5", 
+        "profile_link_color": "000000", 
+        "profile_image_url": "http://pbs.twimg.com/profile_images/470405045738274816/o_7QzOEy_normal.jpeg", 
+        "following": null, 
+        "geo_enabled": false, 
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1650719012/1400988277", 
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/431953559425282049/04og3Ngm.jpeg", 
+        "screen_name": "CINNAB0NOUIS", 
+        "lang": "en", 
+        "profile_background_tile": true, 
+        "favourites_count": 15104, 
+        "name": "PLEASE MICHAEL", 
+        "notifications": null, 
+        "url": null, 
+        "created_at": "Tue Aug 06 16:34:27 +0000 2013", 
+        "contributors_enabled": false, 
+        "time_zone": "Eastern Time (US & Canada)", 
+        "protected": false, 
+        "default_profile": false, 
+        "is_translator": false
+    }, 
+    "geo": null, 
+    "in_reply_to_user_id_str": "813286", 
+    "lang": "en", 
+    "created_at": "Wed Oct 16 01:31:54 +0000 2013", 
+    "in_reply_to_status_id_str": "390288744235823104", 
+    "place": null
+}
+\end{lstlisting}
+
+\subsection{Facebook}
+\label{raw:api:facebook}
+In contrast to the former two examples, Facebook returns fairly minimal data. However, like Twitter, this also includes some information about the user (in this case a ``category''.
+\begin{lstlisting}[breaklines]
+{
+    "id": "10151874920756749_20645335",
+    "can_remove": false,
+    "created_time": "2013-10-15T15:03:22+0000",
+    "from": {
+       "category": "Local business",
+       "category_list": [
+          {
+             "id": "175898962454294",
+             "name": "Dog Training"
+          },
+          {
+             "id": "188573091164316",
+             "name": "Pet Store"
+          }
+       ],
+       "name": "Dogs lovers \u10e6\u10e6",
+       "id": "161928764002567"
+    },
+    "like_count": 0,
+    "message": "plz guys like my page plzz nobody likes \ud83d\ude29 \ud83d\ude32 \ud83d\ude1e \ud83d\ude35 \ud83d\ude30 \ud83d\ude12 \ud83d\ude0d \ud83d\ude24 \ud83d\ude1c \ud83d\ude1d \ud83d\ude0b \ud83d\ude18 \ud83d\ude1a \ud83d\ude37 \ud83d\ude33 \ud83d\ude03 \ud83d\ude06 my page i have challenged my friend that i will get more likes then him in one week and he has more likes then me \ud83d\ude29 \ud83d\ude32 \ud83d\ude1e \ud83d\ude35 \ud83d\ude30 \ud83d\ude12 \ud83d\ude0d \ud83d\ude24 \ud83d\ude1c \ud83d\ude1d \ud83d\ude0b \ud83d\ude18 \ud83d\ude1a \ud83d\ude37 \ud83d\ude33 \ud83d\ude03 \ud83d\ude06",
+    "user_likes": false
+}
+\end{lstlisting}
+
+\newpage
+\section{RDF Representation}
+This section shows how a particular post taken from Twitter can be broken down into premises and conclusions, and represented as RDF.
+
+The extract below shows the structure of the post itself: its content (\texttt{aif:claimText}), its author (\texttt{sioc:has\_creator}), its creation date (\texttt{dcterms:created}), etc.
+\begin{lstlisting}[breaklines]
+<rdf:Description rdf:about="http://tomblount.co.uk/aswo#Post_390293189556715520">
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#L-node"/>
+    <rdf:type rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    <sioc:reply_of rdf:resource="http://tomblount.co.uk/aswo#Post_390292836153049088"/>
+    <aswo:mention_of rdf:resource="http://tomblount.co.uk/aswo#Post_390288744235823104"/>
+    <aswo:has_reputation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</aswo:has_reputation>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-10-16T01:48:42</dcterms:created>
+    <aif:claimText>@kade6767 @BarackObama all presidents must work with Congress. Every budget they've submitted has been turned down.</aif:claimText>
+    <sioc:has_creator rdf:resource="http://tomblount.co.uk/aswo#User_14772441"/>
+</rdf:Description>
+\end{lstlisting}
+
+This extract shows the premises and conclusions taken from the post, each containing a claim (\texttt{aif:claimText}).
+\begin{lstlisting}[breaklines]
+<rdf:Description rdf:about="http://tomblount.co.uk/aswo#I_Node_390293189556715520_P1">
+    <aif:claimText>All presidents should work with congress</aif:claimText>
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#I-node"/>
+</rdf:Description>
+  
+<rdf:Description rdf:about="http://tomblount.co.uk/aswo#I_Node_390293189556715520_P2">
+    <aif:claimText>Turning down every budget constitutes not working with congress</aif:claimText>
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#I-node"/>
+</rdf:Description>
+  
+<rdf:Description rdf:about="http://tomblount.co.uk/aswo#I_Node_390293189556715520_C1">
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#I-node"/>
+    <aif:claimText>The president should accept a budget</aif:claimText>
+</rdf:Description>
+\end{lstlisting}
+
+This extract shows the RA-Node, linking the premises (\texttt{aif:Premise}) and conclusion (\texttt{aif:Conclusion}).
+\begin{lstlisting}[breaklines]
+<rdf:Description rdf:about="http://tomblount.co.uk/aswo#RA_Node_390293189556715520_1">
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#RA-node"/>
+    <aif:Conclusion rdf:resource="http://tomblount.co.uk/aswo#I_Node_390293189556715520_C1"/>
+    <aif:Premise rdf:resource="http://tomblount.co.uk/aswo#I_Node_390293189556715520_P2"/>
+    <aif:Premise rdf:resource="http://tomblount.co.uk/aswo#I_Node_390293189556715520_P1"/>
+</rdf:Description>
+\end{lstlisting}
+
+The final extract shows the YA-Node that links the components of the post. This links the premises, conclusion and RA-Node (\texttt{aif:IllocutionaryContent}) with the post itself (\texttt{aif:Locution}).
+\begin{lstlisting}[breaklines]
+<rdf:Description rdf:about="http://tomblount.co.uk/aswo#YA_Node_390293189556715520_1">
+    <aif:Locution rdf:resource="http://tomblount.co.uk/aswo#Post_390293189556715520"/>
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#YA-node"/>
+    <aif:IllocutionaryContent rdf:resource="http://tomblount.co.uk/aswo#RA_Node_390293189556715520_1"/>
+    <aif:IllocutionaryContent rdf:resource="http://tomblount.co.uk/aswo#I_Node_390293189556715520_P1"/>
+    <rdf:type rdf:resource="http://www.arg.dundee.ac.uk/aif#Normal_Illocution"/>
+    <aif:IllocutionaryContent rdf:resource="http://tomblount.co.uk/aswo#I_Node_390293189556715520_P2"/>
+    <aif:IllocutionaryContent rdf:resource="http://tomblount.co.uk/aswo#I_Node_390293189556715520_C1"/>
+</rdf:Description>
+\end{lstlisting}

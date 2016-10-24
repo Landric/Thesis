@@ -1,0 +1,40 @@
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[node distance=3.5cm,>=stealth',bend angle=10]
+
+	\tikzstyle{rect}=[
+		rectangle,
+		thick,
+		draw=black,
+  		fill=white
+  	]
+	
+
+	\node [rect, font=\footnotesize] (A) [] {\parbox{0.2\textwidth}{\textbf{\textit{Issue:}}\\Is Alice a British citizen?}};
+
+	\node [rect, font=\footnotesize] (B) [above right=16mm] {\parbox{0.2\textwidth}{\textbf{\textbf{\textit{Idea:}}}\\Alice would be a British citizen if she had a British passport}};
+	\node [rect, font=\footnotesize] (C) [below right=16mm] {\parbox{0.2\textwidth}{\textbf{\textit{Idea:}}\\Alice would be a British citizen if she was born in a British territory}};
+	
+
+	\node [rect, font=\footnotesize] (E) [right of=B] {\parbox{0.2\textwidth}{\textbf{\textit{Disagreement:}}\\Alice does not hold (any) passport}};
+	
+	\node [rect, font=\footnotesize] (F) [right of=C] {\parbox{0.2\textwidth}{\textbf{\textit{Agreement:}}\\Alice was born in Bermuda (a British Overseas Territory)}};
+	\node [rect, font=\footnotesize] (G) [below right of=C] {\parbox{0.2\textwidth}{\textbf{\textit{Disagreement:}}\\Being born in overseas territory makes one an Overseas Citizen}};
+	
+	\node [rect, font=\footnotesize] (H) [right of=F] {\parbox{0.2\textwidth}{\textbf{\textit{Issue:}}\\Alice might be disqualified if her parents are aliens}};
+	
+	\draw[post] (A)--(B)  ;
+	\draw[post] (A)--(C)  ;
+	
+	\draw[post] (B)--(E)  ;
+	
+	\draw[post] (C)--(F)  ;
+	\draw[post] (C)--(G)  ;
+	
+	\draw[post] (F)--(H)  ;
+      
+\end{tikzpicture}
+\end{center}
+\caption{Example usage of an IBIS model, examining whether Alice is a British citizen}
+\label{figure:ibis}
+\end{figure}

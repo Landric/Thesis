@@ -1,0 +1,263 @@
+\chapter{Expert Information Sheet}
+\label{expertsheet}
+The following is a reproduction of the information sheet provided to experts conducting the review in Chapter \ref{expert}.
+
+\section{Proposal}
+This work aims to extend the current methods for modelling web based argument to take into account additional social features and differentiating between ``logical'' argument that focuses on (purported) facts and ``rhetorical'' argument that focuses on influencing the perception of participants in the eyes of the audience. This hopes to make the modelling of ``eristic'' argument (argument for the sake of argument) more complete, clear and consistent.
+
+\section{Existing Models}
+
+\subsection{Argument Interchange Format}
+The Argument Interchange Format (AIF) is a framework for representing argumentation as a directed graph \citep{Chesnevar2006}, modelling information ``nodes'' and the relationships (such as inference or conflict) between them. In their work on an extension to the AIF, dubbed AIF+, Reed et al. differentiate between these logical relations and the actual words spoken during the debate \citep{Reed2008}. Table \ref{table:nodes} shows an overview of these nodes and how they are used in the AIF(+).
+
+\subsection{Semantically Interlinked Online Communities}
+The Semantically Interlinked Online Communities project (SIOC), a semantic-web vocabulary for representation social media, aims to enable the cross-platform, cross-service representation of data from the social web \citep{Breslin2006}. This allows for semantic representations of Sites, which hold Forums, which contain Posts, authored by a UserAccount (explicitly \textit{not} a person, as a person can own and manage more than one UserAccount). Table \ref{table:nodes} shows an overview of the nodes used in SIOC.
+
+\begin{table}[H]
+\centering
+\caption{Description of nodes in model}
+\label{table:nodes}
+\begin{tabular}{| m{0.15\textwidth} | m{0.4\textwidth} | >{\centering\arraybackslash}m{0.35\textwidth} | m{0.15\textwidth} }
+\cline{1-3}
+\textbf{Name} & \textbf{Description} & \textbf{Node}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I-node &
+\textbf{Information} nodes represent a (purported) piece of information, data, or claim &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/I node.png} &
+\rdelim\}{6}{3mm}[AIF]\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+S-nodes (RA-, CA-, PA-nodes) &
+\textbf{Scheme} nodes denote a logical connection between I-nodes, respectively an \textbf{inference}, a \textbf{conflict}, or a \textbf{value preference} &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/RA node.png}\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/CA node.png}\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/PA node.png}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+YA-node &
+\textbf{Illocutionary anchor} nodes tie the information and logical structure of an argument with the spoken or written locution &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/YA node.png} &
+\rdelim\}{14}{3mm}[AIF+]\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+L-node &
+\textbf{Locution} nodes represent the actual words that are spoken or written by participants&
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/L node.png}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TA-node &
+\textbf{Transition} nodes represent links between locutions. \textbf{Note:} this is adapted by the ASWO to denote transitions between locutions that do not add information nodes, but still further the debate (such as prompting for more details, evidence, etc.) &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/TA node.png}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+U-node &
+\textbf{User-account} nodes denote the account the user uses to contribute & \includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/U node.png} &
+\rdelim\}{2}{3mm}[SIOC]\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{table}
+
+\subsection{Examples}
+\subsubsection{Syllogism}
+A syllogism is an example of reasoning in which two premises are used to draw a conclusion. Figure \ref{figure:syllogism1} shows a syllogism of the form \textit{``All men are mortal. Socrates is a man. Therefore Socrates is mortal''}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{../../speech_acts_js/images/annotated/syllogism1.png}
+\caption{Example of a syllogism: \textit{``All men are mortal. Socrates is a man. Therefore Socrates is mortal''}}
+\label{figure:syllogism1}
+\end{figure}
+
+\subsection{Exercise 1}
+Please read the following sample arguments and describe (aloud, if you are being interviewed face-to-face) how you would model them using the AIF(+) and SIOC. You may find sketching them on a piece of paper useful. If you are feel unsure of how to model all or part of one of these samples, move on to the next part.
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Ad hominem
+\item 
+\begin{itemize}
+\item \textbf{User 1:} \textit{The tech industry is often biased against women}
+\item \textbf{User 2:} \textit{@User1 You would say that, you're a woman}
+\item \textbf{User 3:} \textit{@User1 **** off and die you ****ing nazi before I come and **** you up}
+\end{itemize}
+
+%Syllogism
+\item 
+\begin{itemize}
+\item \textbf{User 1:} \textit{Guns killed 33,000 people last year, they need to be banned}
+\item \textbf{User 2:} \textit{@User1 And a lot of those were minors}
+\item \textbf{User 3:} \textit{@User2 According to who?}
+\end{itemize}
+
+%Humour
+\item 
+\begin{itemize}
+\item \textbf{User 1:} \textit{What does Barack Obama call illegal aliens? Undocumented democrats!}
+\item \textbf{User 2:} \textit{@User1 You're so stupid you probably went to the library to find Facebook}
+\end{itemize}
+
+\end{enumerate}
+
+\section{Argumentation on the Social Web Ontology}
+The principal features from the AIF and SIOC ontologies are combined alongside the means to model rhetorical tactics in the Argumentation on the Social Web Ontology (ASWO). The principal focus here is the inclusion of the social impact of arguments made and the use of rhetorical support and attack \citep{Blount2014, Blount2015}. Table \ref{table:newnodes} shows an overview of the additional nodes used to model social impact.
+
+\begin{table}[H]
+\centering
+\caption{Description of nodes added to the model}
+\label{table:newnodes}
+\begin{tabular}{| m{0.15\textwidth} | m{0.4\textwidth} | >{\centering\arraybackslash}m{0.35\textwidth} | m{0.15\textwidth} }
+\cline{1-3}
+\textbf{Name} & \textbf{Description} & \textbf{Node}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+P-node &
+\textbf{Persona} nodes denote a person's social ``character'' that they assume during a discussion&
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/P node.png} &
+\rdelim\}{16}{3mm}[ASWO]\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+F- and A-nodes &
+\textbf{Faction} and \textbf{Audience} nodes represent groups of personas &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/F node.png}\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/A node.png}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PS-, PC-nodes &
+\textbf{Personal Support} and \textbf{Personal Conflict} nodes support/attack personas or groups rather than pieces of information &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/PS node.png}\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/PC node.png}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Im-node &
+\textbf{Implication} nodes imply a relationship that may or may not exist. Can be combined with a PS- or PC-node to denote positive or negative implication &
+\includegraphics[trim=0 0 0 -5]{../../speech_acts_js/images/individual nodes/Im node.png}\\
+\cline{1-3}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{table}
+
+%\begin{figure}[H]
+%\centering
+%\label{figure:multiple_personas}
+%\includegraphics[scale=\imageScale]{../speech_acts_js/images/user persona examples/multiple personas.png}
+%\caption{Example of multiple personas}
+%\end{figure}
+
+\subsection{Examples}
+
+\subsubsection{\textit{Ad hominem}}
+\textit{Ad hominem} (``to the man'') arguments attack a person's character, without attacking their argument. However, they can be a viable tactic in rhetorical debate and can introduce both new I-, CA- and PC-nodes to the structure when modelled.
+
+Figure \ref{figure:hominem1} shows a ``reasonable'' \textit{ad hominem} argument \citep{walton1987}, such as \textit{``You don't have any qualifications in that area, don't make such broad statements''}
+
+Figure \ref{figure:hominem2} shows a more aggressive tactic that disparages someone's argument and them as a person, such as \textit{``They're an idiot, don't listen to them''}
+
+Figure \ref{figure:hominem3} shows an abusive argument that contains no information, instead attacking the person directly and trying to shut them out of the debate, for example \textit{``**** off and die!''}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/hominem1.png}
+\caption{Example of \textit{ad hominem}}
+\label{figure:hominem1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/hominem2.png}
+\caption{Example of \textit{ad hominem}}
+\label{figure:hominem2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/hominem3.png}
+\caption{Example of \textit{ad hominem}}
+\label{figure:hominem3}
+\end{figure}
+
+\subsubsection{Appeal to Consensus}
+Appeal to consensus is the fallacy that because a claim is popular or widely-held, it is true. An example of this can be shown in Figure \ref{figure:consensus1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/consensus1.png}
+\caption{Example of Appeal to Consensus}
+\label{figure:consensus1}
+\end{figure}
+
+\subsubsection{Association Fallacy}
+The association fallacy is the notion that because a person is associated with, or shares the views of, an undesirable group, their claims are wrong. An example of this can be shown in Figure \ref{figure:association1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/association1.png}
+\caption{Example of the association fallacy}
+\label{figure:association1}
+\end{figure}
+
+\subsubsection{Appeal to Humour}
+Appeal to humour is a technique by which a participant in the debate attempts to ingratiate themselves with their audience by making a joke about the situation as shown in \ref{figure:humour1}. This can be coupled with an \textit{ad hominem} attack when the joke is made at someone else's expense.%, as shown in Figure \ref{figure:humour2}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/humour1.png}
+\caption{Example of Appeal to Humour in the model}
+\label{figure:humour1}
+\end{figure}
+
+\subsection{Exercise 2}
+Please read the following sample arguments and describe (aloud, if you are being interviewed face-to-face) how you would model them using the additional nodes added by the AWSO. You may find sketching them on a piece of paper useful. If you are feel unsure of how to model all or part of one of these samples, move on to the next part.
+
+\begin{enumerate}
+%Ad hominem
+\item 
+\begin{itemize}
+\item \textbf{User 1:} \textit{The tech industry is often biased against women}
+\item \textbf{User 2:} \textit{@User1 You would say that, you're a woman}
+\item \textbf{User 3:} \textit{@User1 **** off and die you ****ing nazi before I come and **** you up}
+\end{itemize}
+
+%Syllogism
+\item
+\begin{itemize}
+\item \textbf{User 1:} \textit{Guns killed 33,000 people last year, they need to be banned}
+\item \textbf{User 2:} \textit{@User1 And a lot of those were minors}
+\item \textbf{User 3:} \textit{@User2 According to who?}
+\end{itemize}
+
+%Humour
+\item
+\begin{itemize}
+\item \textbf{User 1:} \textit{What does Barack Obama call illegal aliens? Undocumented democrats!}
+\item \textbf{User 2:} \textit{@User1 You're so stupid you probably went to the library to find Facebook}
+\end{itemize}
+
+\end{enumerate}
+
+\section{Questions}
+\begin{enumerate}
+
+%VALUE
+\item Why do you feel social argumentation is, or is not, important to model?
+
+%ISSUES
+\item What, in your opinion, are the challenges of modelling social argument?
+
+%\item What do you feel can be gained from modelling social interactions alongside argument?
+
+%\item Is modelling e-bile a sensible approach to understanding web-communities? Why?
+
+\item Are threatening and/or abusive comments something that should be considered social argumentation? If not, where should the line be drawn?
+
+\item If yes, how do you feel these threatening and/or abusive comments should be included?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%COMPLETENESS
+%\item Do you feel this ontology is complete?
+\item To what extent did the ASWO capture different elements of argumentation? What do you feel is missing?
+
+%CLARITY
+%\item Do you feel this ontology is clear?
+\item Were there parts of the ASWO you felt were unclear? In what way?
+
+%CONSISTENCY
+%\item Do you feel this ontology is consistent?
+%\item Do you feel it is important for there to be a single ``correct'' way to model an instance of an argument?
+%\item Do you feel ASWO manages to accomplish this?
+
+\item Do you feel the ASWO is consistent with the AIF?
+
+\item Do you feel the ASWO is internally consistent?
+
+\item If two people were to separately model the same argument using the ASWO, do you think they would achieve the same result? Do you feel this is important?
+
+%FINALLY
+\item Do you have any other comments about the implementation of this model?
+\end{enumerate}

@@ -1,0 +1,288 @@
+\chapter{Use of and Expert Review of Extensions}
+\label{expert}
+
+\newcommand{\imageScale}{0.55}
+\newcommand{\nodeScale}{0.95}
+
+%EXPERTS
+\newcommand{\simon}{A }
+\newcommand{\jodi}{B }
+\newcommand{\bob}{C }
+\newcommand{\lizzy}{D }
+\newcommand{\ash}{E }
+\newcommand{\chris}{F }
+
+In this chapter, the additional proposed nodes are review by \TODO{intro}
+
+\section{Proposed Additions}
+
+Table \ref{table:newnodes} shows the additional nodes that we propose, to aid modelling rhetorical or ``extra-logical'' argument with the ASWO.
+
+One of the key additions is the Persona node -- this represents ``character'' that they assume during the discussion. A person may argue in a different fashion in a debate about music than they would about technical expertise, for example. This allows one UserAccount to have many Personas where necessary. The inverse, linking one Persona to multiple UserAccounts, is also possible, and could represent a participant attempting to artificially solidify their position by creating multiple accounts.
+
+Faction and Audience nodes represent groups of personas; a Faction is any grouping of Personas and can potentially include those outside the Thread. The Audience represents all Personas currently participating in, or observing, the discussion.
+
+Personal Support and Personal Conflict nodes allow a means of representing support and attack that does not rely on logic and instead uses rhetorical force, social pressure or some other form of ``extra-logical'' tactic.
+
+Implication nodes allow analysts to represent a participant implying a relationship between two (or more) nodes, such as Personas. These can be combined with the Personal Support/Conflict nodes to indicate whether the implication is positive or negative.
+
+
+\begin{table}
+\centering
+\caption{Description of nodes added to the model}
+\label{table:newnodes}
+\begin{tabular}{| l | p{6cm} | p{3cm} |}
+\hline
+\textbf{Name} & \textbf{Description} & \textbf{Node}\\
+\hline
+P-node & \textbf{Persona} nodes denote a person's social ``character'' that they assume during a discussion & \includegraphics[trim=0 0 0 -5, scale=\nodeScale]{../../speech_acts_js/images/individual nodes/P node.png}\\
+\hline
+F- and A-nodes & \textbf{Faction} and \textbf{Audience} nodes represent groups of personas & \includegraphics[trim=0 0 0 -5, scale=\nodeScale]{../../speech_acts_js/images/individual nodes/F node.png}\includegraphics[trim=0 0 0 -5, scale=\nodeScale]{../../speech_acts_js/images/individual nodes/A node.png}\\
+\hline
+PS-, PC-nodes & \textbf{Personal Support} and \textbf{Personal Conflict} nodes support/attack (individual or groups of) \textbf{Personas} and \textbf{Information} in a non-logical way & \includegraphics[trim=0 0 0 -5, scale=\nodeScale]{../../speech_acts_js/images/individual nodes/PS node.png}\includegraphics[trim=0 0 0 -5, scale=\nodeScale]{../../speech_acts_js/images/individual nodes/PC node.png}\\
+\hline
+Im-node & \textbf{Implication} nodes indicate a relationship that the participants can not be sure exists & \includegraphics[trim=0 0 0 -5, scale=\nodeScale]{../../speech_acts_js/images/individual nodes/Im node.png}\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Examples of Use}
+These additions aim to provide atomic ``building-blocks'' that can be reused to model a wide range of social, rhetorical and ``extra-logical'' aspects of argumentation. Here, we show how these nodes can be used by modelling some examples of common logical fallacies.
+
+
+%\begin{table}[H]
+%\centering
+%\caption{Potential usage of nodes when modelling fallacious arguments}
+%\label{table:fallacynodes}
+%\begin{tabular}{l  | l | p{6cm}}
+%
+%\textbf{Argument} & \textbf{Description} & \textbf{Nodes} \\
+%\hline
+%\textit{Ad hominem} 1 & & \\
+%\textit{Ad hominem} 2 & & \\
+%\textit{Ad hominem} 3 & & \\
+%
+%Appeal to consensus& & \\
+%
+%Association fallacy & & \\
+%
+%Appeal to humour 1 & & \\
+%Appeal to humour 2 & & \\
+%\end{tabular}
+%\end{table}
+
+
+\subsubsection{Syllogism}
+A syllogism is an example of reasoning in which two premises are used to draw a conclusion. Figure \ref{figure:syllogism1} shows a syllogism of the form \textit{``All men are mortal. Socrates is a man. Therefore Socrates is mortal''}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/syllogism1.png}
+\caption{Example of a syllogism: \textit{``All men are mortal. Socrates is a man. Therefore Socrates is mortal''}}
+\label{figure:syllogism1}
+\end{figure}
+
+
+\subsubsection{\textit{Ad hominem}}
+\textit{Ad hominem} (``to the man'') arguments attack a person's character, without attacking their argument. However, they can be a viable tactic in rhetorical debate and can introduce both new I-, CA- and PC-nodes to the structure when modelled. Figure \ref{figure:hominem1} shows a reasonable \textit{ad hominem} argument \cite{walton1987}, such as \textit{``You don't have any qualifications in that area, don't make such broad statements.''} Figure \ref{figure:hominem2} shows a more aggressive tactic that disparages someone's argument and them as a person, such as \textit{``They're an idiot, don't listen to them.''} Figure \ref{figure:hominem3} shows an abusive argument that contains no information, instead attacking the person directly and trying to shut them out of the debate, for example \textit{``**** off and die!''} These examples in particular show that a fallacy can take multiple forms and have multiple logical and/or rhetorical contributions to the overall discussion.
+
+%\begin{figure}[H]
+%\begin{minipage}{0.5\textwidth}
+%\centering
+%\includegraphics[scale=.42]{../../speech_acts_js/images/annotated/hominem1.png}
+%\end{minipage}%
+%\begin{minipage}{0.5\textwidth}
+%\centering
+%\includegraphics[scale=.6]{figures/expert/fb_hominem1.png}
+%\end{minipage}
+%\caption{Example of \textit{ad hominem} \TODO{Dave suggested including a fictional FB post to illustrate the model though I think it might be tough to squeeze them in at an appropriate size}}
+%\label{figure:hominem1}
+%\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.8]{figures/expert/fb_hominem1.png}
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/hominem1.png}
+\caption{Example of a reasonable \textit{ad hominem} attack}
+\label{figure:hominem1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/hominem2.png}
+\caption{Example of an \textit{ad hominem} attacking both persona and argument \TODO{consider adding 'dummy' FB images}}
+\label{figure:hominem2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/hominem3.png}
+\caption{Example of an abusive \textit{ad hominem} \TODO{consider adding 'dummy' FB images}}
+\label{figure:hominem3}
+\end{figure}
+
+\subsubsection{Appeal to Consensus}
+The appeal to consensus is the fallacy that because a claim is popular or widely-held, it is true. An example of this can be shown in Figure \ref{figure:consensus1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/consensus1.png}
+\caption{Example of an appeal to consensus \TODO{consider adding 'dummy' FB images}}
+\label{figure:consensus1}
+\end{figure}
+
+\subsubsection{Association Fallacy}
+The association fallacy is the notion that because a person is associated with, or shares the views of, an undesirable group, their claims are wrong. An example of this can be shown in Figure \ref{figure:association1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/association1.png}
+\caption{Example of the association fallacy}
+\label{figure:association1}
+\end{figure}
+
+\subsubsection{Appeal to Humour}
+An appeal to humour is a technique by which a participant in the debate attempts to ingratiate themselves with their audience by making a joke about the situation as shown in Figure \ref{figure:humour1}. This can be coupled with an \textit{ad hominem} attack, when the joke is made at someone else's expense, as shown in Figure \ref{figure:humour2}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/humour1.png}
+\caption{Example of an appeal to humour}
+\label{figure:humour1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\imageScale]{../../speech_acts_js/images/annotated/humour2.png}
+\caption{Example of an \textit{ad hominem} appeal to humour}
+\label{figure:humour2}
+\end{figure}
+
+\section{Expert Review}
+Six experts, from the fields of argumentation systems,  web science, philosophy, and linked data, were chosen to review these proposed additions to the model.
+
+Experts \simon and \jodi have a background in argumentations systems and modelling argumentation, and are familiar with the AIF. Expert \simon is a computer science lecturer whose research is concerned with argumentation-based models of communication and formal reasoning, with interests in AI and behaviour change. Expert \jodi is a post-doctoral researcher with degrees in library and information science, mathematics, and liberal arts whose thesis focused on the problem of analysing, integrating, and reconciling information in online discussions.
+
+Expert \bob is a web-science graduate student, researching the relation between social structures in virtual worlds and the real world, with a focus on practices of gender and power.
+
+Expert \lizzy is a philosophy graduate student, specialising in ethics, moral obligations and with a background in argumentation and formal logic.
+
+Experts \ash and \chris are specialists in the area of open and linked data  working in web and data innovation and development. Expert \ash is an institutional open data specialist and Expert \chris is a senior technical specialist.
+
+Each expert was provided with a document describing the background of this area and an overview of the existing models (reproduced in Appendix \ref{expertsheet}). They were then asked to model three argumentation samples shown in Figure \ref{figure:snippets}, illustrating a variety of different rhetorical structures, by speaking aloud and/or sketching with pen and paper. They were then shown the additions to the model, and asked to model the three argumentation samples again. They were then asked a series of semi-structured question aimed to evaluate their thoughts on how best (and whether) to model social (and anti-social) argumentation, the completeness of the ontology, the clarity of the ontology and the consistency of the ontology.
+
+
+\begin{figure}
+
+\begin{enumerate}
+\small
+%Ad hominem
+\item 
+\textbf{User 1:} \textit{The tech industry is often biased against women}\\
+\textbf{User 2:} \textit{@User1 You would say that, you're a woman}\\
+\textbf{User 3:} \textit{@User1 **** off and die you ****ing nazi before I come and **** you up}
+~\newline
+%Syllogism
+\item 
+\textbf{User 1:} \textit{Guns killed 33,000 people last year, they need to be banned}\\
+\textbf{User 2:} \textit{@User1 And a lot of those were minors}\\
+\textbf{User 3:} \textit{@User2 According to who?}
+~\newline
+%Humour
+\item 
+\textbf{User 1:} \textit{What does Barack Obama call illegal aliens? Undocumented democrats!}\\
+\textbf{User 2:} \textit{@User1 You're so stupid you probably went to the library to find Facebook}
+
+
+\end{enumerate}
+\caption{The three argumentation samples the experts were asked to model}
+\label{figure:snippets}
+\end{figure}
+
+
+\subsection{Results and Analysis}
+\label{results}
+Table \ref{table:results} shows an overview of the key points discussed by the experts along the themes of modelling social argumentation, completeness, clarity and consistency (and relevant sub-themes).
+
+\begin{center}
+\begin{longtable}{l l | p{6cm}}
+\caption{Summary of experts' opinions on key aspects of ASWO}\\
+\label{table:results}
+\textbf{Theme} & \textbf{Sub-theme} & \textbf{Comments} \\
+\hline
+\parbox[t]{2cm}{\textbf{Social\\Argumentation}} & \textit{Value} & \textit{``...if we're going to have a realistic model of how people argue, we've got to look at how people really argue rather than how our ``ideal reasoner'' would argue''} --~Expert~\simon \\
+& & \textit{``I think modelling social argumentation is very important...I want to say it's useful in trying to help people argue `better'.''} --~Expert~\lizzy\\
+\cline{2-3}
+& \textit{Challenges} & \textit{``Even in quite a simple back-and-forth argument, there's quite a lot going on...scale is a challenge''} --~Expert~\bob\\
+& & \textit{``...enthymemes, humour, there's lots of missing information, there's lots of playing to particular audiences...there are lots of things that are current events or would only make sense to a particular group''} --~Expert~\jodi\\
+\cline{2-3}
+&\textit{Abuse/Threats} & \textit{``I, personally, tend to ignore all of those because I'm...focusing on the informal proof structures''} --~Expert~\simon\\
+&& \textit{``...it's hard to exclude them...if you think about what you're going to do with the model...do you want to retrieve threatening and abusive comments? Well you might want to exclude them from being retrieved, which also makes it relevant to model that''} --~Expert~\jodi\\
+\hline
+\textbf{Completeness} & \textit{Implicit/Explicit Premises}& \textit{``I think when people model arguments it's pretty common to infer the reading, and what's interesting is that there can be multiple readings. So it wouldn't be wrong to...put in some interpretation, as long as it's clear it's an interpretation and there can be others. ''} --~Expert~\jodi \\
+\cline{2-3}
+&\textit{Social Meta-Data} & \textit{``One other thing... is other people's opinions of statements. A lot of systems have thumbs up and thumbs down...what you need is, I think, an audience response''} --~Expert~\chris\\
+\hline
+\textbf{Clarity} & \textit{Generalisation} & \textit{``If anything I think maybe your default conflict is a superclass - everything is a conflict, and one of the subclasses is a...rational argument. But then you've also got personal attack, ad hominem...these are all alternatives to rational argument, but at the default it might be worth allowing modelling of a conflict. Not a conflict as it is in the original model, but as a superclass of interaction.''} --~Expert~\chris\\
+\cline{2-3}
+ & \textit{Ambiguity} & \TODO{EXPAND OUT THESE TOO} \textit{``If a...''} --~Expert~\lizzy\\
+ & & \TODO{Assumptions RE gender of participants etc} --~Expert~\ash\\
+\hline
+\textbf{Consistency} & \textit{Internal consistency} & \textit{``whenever you try to model anything in a formalised system...if you give two people the same thing...unless it's something really simple, they will always find two different ways of modelling it''} --~Expert~\ash \\
+& & \textit{``...rather than having the minimal number of nodes and encouraging people to just misuse them, I would rather say `Here's a definite type of argumentation we want to capture and share...'''} --~Expert~\simon\\
+\cline{2-3}
+  & \textit{External consistency} & \textit{``Consistent with [the AIF], maybe not, but building on? Definitely''} --~Expert~\bob \\
+\end{longtable}
+\end{center}
+
+
+\subsubsection{Social Argumentation}
+%Value
+Each of the experts agreed that there was value in modelling social argumentation, Expert \chris going so far as to say they believed there was no argument that didn't have social components. Expert \lizzy discussed how understanding the nuances of how people argue socially could lead to ways of helping or encouraging them to argue ``better'', in a more cooperative or polite manner.
+
+%Challenges
+The challenges of modelling social argumentation the experts foresaw were mostly a question of scale. In part, the sheer volume of data in a social media discussion can be overwhelming, particularly when considering the speed with which in can grow, but also in terms of the variety of information, which is often contextual, such as references to current events, or cultural ``in-jokes''.
+
+%Abuse/Threats
+Experts \simon and \lizzy explained that they would not consider abusive argumentation as a valid when modelling an argumentation structure (as they focused broadly on dialectic arguments and that was the current standard for their domain), although they agreed it was a potentially valuable area to explore. Expert \jodi explain that it depended very much on the purpose of the model --- in some cases it may be important to model threatening and abusive attacks specifically so they can be excluded when presenting the model to users. Expert \ash also noted that excluding this type of argument can lead to confusion if a particular abusive comment changes the course of the argument, or causes the quality of the rest of the discussion to degenerate.
+
+\subsubsection{Completeness}
+Experts \simon and \jodi both made explicit mention of the ability to mark certain posts as being in direct response to other participants in the discussion as a useful addition to argumentation frameworks. 
+
+Expert \jodi noted that as many annotations have the potential to be subjective, it would be possible to extend this to include further subjective annotations such as an analyst's confidence in a particular reading of an inference. Expert \bob had similar views and discussed including mappings of a participant's agreement or disagreement with key positions in the dialogue as well.
+
+Expert \chris discussed the potential for an ``activity'' score for each locution, derived from the social meta-data of each post (e.g. number of replies, number of up- or down-votes or number of retweets); this metric could be derived on a per-purpose basis to allow analysts to correctly categorise different platforms for their own needs, and to highlight key areas of the discussion that had solicited or stimulated large amounts of discussion.
+
+Broadly, all experts agreed that to adequately model social argument that it was necessary to include further context about the participants, such as demographic information where available, such as by linking the SIOC UserAccount to a FOAF Agent, or additional information about key events related to the discussion to maintain relevance of the model for future analysis, and to limit the number of assumptions needed to be made by analysts.
+
+
+\subsubsection{Clarity}
+Expert \lizzy was concerned that, when faced as an analyst with a statement that appeared ambiguous (for example, a statement of support that could be interpreted as genuine or sarcastic) they may struggle to accurately and objectively model it, and proposed a means of allowing analysts to mark such relations as existing without committing to associating them with either a support or an attack.
+
+Expert \chris proposed a similar solution, by means of generalising the model to include super-classes of Support and Conflict. ``Personal'' conflict, for example, is perhaps too specific a name for all non-logical conflicts: there are rhetorical attacks that can target institutions or accounts run by software, but also, importantly, positions and information. These Support and Conflict super-classes would encompass Logical Support/Conflict and Rhetorical Support/Conflict and could then be further sub-classed to provide more specific instances of each, where apparent, allowing analysts to defer when unsure.
+
+
+\subsubsection{Consistency}
+
+The majority of experts felt that these additions to the ASWO were consistent with the nodes used in the AIF. However, Experts \bob and \chris disagreed, pointing to the fact that the ASWO was intentionally inconsistent with the AIF because they were developed for different purposes.
+
+In terms of inter-rater reliability --- whether two analysts attempting to model the same argument would reach the same result --- the experts were much more divided. While they agreed that the objective parts of the model (i.e. the locutions, user account and, in most circumstances, the persona) could be modelled identically (and in most cases, automated), Experts \bob and \jodi felt that both analysts would reach the same conclusion overall with minor deviations, whereas Experts \simon, \lizzy and \ash disagreed, stating there was too much subjective information to model identically. Expert \simon felt that the analyst would naturally perceive the argument through their own lens of cultural and social context and Expert \lizzy noted the different levels of detail an analyst may choose to use, whether focusing only on premises that have been explicitly stated, or including additional implicit information.
+
+How important this is was also a matter of some debate: Experts \jodi and \bob felt that it was likely there would (and should) be one ``correct'' representation of an argument. Experts \lizzy and \chris agreed to an extent, citing their proposals for handling ambiguous content being able to aid annotators in this regard, so that if the model could not be complete, it could be consistent. Expert \simon felt that ideally analysts should reach the same conclusion but in practice, the subjective nature of the task might make this impossible. Expert \ash felt the consistency of annotators would, in practice, be less important and would be a factor of the intended purpose of the model.
+
+
+\section{Summary}   
+\label{conclusions}
+\TODO{Tidy, refactor, make leading rather than concluding}
+
+In this chapter, further extensions to the ASWO are introduced, to incorporate other modes of rhetorical persuasion that contrast with logical argument. An expert review was conducted, which highlighted some key strengths of this model, such as the ability to model directed replies, the ability to model the audience and the ability to model instances of irrational and eristic argument that were previously difficult or impossible to achieve with the AIF alone.
+
+These results were presented at the conference on Computational Models of Argument \citep{Blount2016rhetorical}.
+
+Because social argumentation can rely heavily on nuanced contextual information (such as the ability to recognise humour, sarcasm or references to current events) it is likely impossible to model it in such a way that it could be automatically reasoned over. However, because the ASWO provides additional information about rhetorical tactics in use, human analysts can explore the resulting structure in greater detail and context. This can also potentially be used to highlight areas of particular interest, or assist in community decision-making environments.
+
+%This review also highlights useful directions of further future work, such as including further contextual information such as participant demographics or social meta-data, or generalising the ontology further. It also lays groundwork for an investigation into how such rhetorical structures are used on different social web platforms.
+%
+%Our hope is that these developments lead to a means of more accurately modelling social argumentation which in turn provides a path to creating tools to allow social media users to critically analyse discussions in progress and to encourage them to engage in debates in good faith.
+

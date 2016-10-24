@@ -1,0 +1,64 @@
+%% ----------------------------------------------------------------
+%% Introduction.tex
+%% ---------------------------------------------------------------- 
+
+
+\chapter{Introduction}
+\label{introduction}
+
+\textit{``A man may be objectively in the right, and nevertheless in the eyes of by-standers, and sometimes in his own, he may come off worst''} -- \citeauthor[The Art of Always Being Right]{Schopenhauer2009}
+
+\section{Problem Space and Motivation}
+\label{introduction:problemspace}
+
+Argumentation is fundamental to human communication -- it is how people share new information and new ideas, and propose courses of action that see them carried out \citep{hahn2005circular, Moor2006}. As a result, there is a large amount of research on argumentation from a wide variety of disciplines and topics, including: philosophy, and the nature of fallacies and how they may be critically appraised \citep{tindale2007}; sociology, and the need to differentiate between classical logic and social argumentation due to the need for the capability to reason using only partial knowledge \citep{polos2002reasoning}; law, and the need for measures of certainty and belief when modelling and reasoning over assertions \citep{bertea2004certainty}; and artificial intelligence, and the use of agent-based systems such as dialogue games, as methods for reasoning over argument \citep{bench2007argumentation, karunatillake2008}.
+
+Argumentation can be (broadly) separated into two categories based on the goals and intended outcome. Firstly, dialectic argument, in which the participants are engaged in rational discourse with the aim of either discovering the particular truth behind a matter, or formulating a solution or resolution for a set of circumstances \citep{kerferd1981}. Secondly, eristic argument, in which there is no clear goal and the participants are not trying to come to a resolution but are quarrelling with the aim of being seen to win, either in the eyes of their opponent or, more often, in the eyes of spectators \citep{kerferd1981, Jorgensen1998}. Arguments can shift between these two forms, or contain ``pockets'' of one form within the other. Orthogonally to this, there are the notions of logic and rhetoric. While often used in modern parlance as a pejorative term, rhetoric is simply the art of discourse, and convincing an audience to one's point of view based on one's knowledge of the topic at hand and, crucially, one's knowledge of the audience themselves (which clearly lends itself to the eristic form) whereas logic deals with reasoning between established facts (which lends itself to the dialectic form).
+
+However, as \citet{Van2004} note, \textit{``perhaps out of fear of metaphysics or of `psychologizing,' present-day logicians tend to concentrate exclusively on formalized arguments that lack any direct relation with how argumentation is conducted in practice.''} Social argumentation, or the way people argue day-to-day, often has a very different structure to formalised models. In these instances, the aim of a proponent is not to prove themselves right through irrefutable logic, but simply to make others believe that they have proved themselves right. 
+%\citet{Schopenhauer2009}, in his satirical work \textit{The Art of Always Being Right}, emphasises that \textit{``A man may be objectively in the right, and nevertheless in the eyes of by-standers, and sometimes in his own, he may come off worst''}.
+
+This is particularly relevant when applied to the social web. As a network of social relationships that are created, formed and maintained through the world wide web, the social web (and the social media presented across it) are rife with discussion, debate, and argumentation \citep{rowe2011predicting}. As the web (and in particular the number of people, tools and communities that make up the social web) grows and becomes totally ubiquitous \citep[p.~559]{smith2009social}, the potential for using it to investigate how truly massive communities interact, communicate and argue increases dramatically. However, the social web presents a number of challenges for extracting and analysing arguments, particularly due to the lack of clear indicators of argument structure. This problem is compounded by the type of language used; often highly informal, incorporating slang and irregular punctuation and grammar \citep{Schneider2012}, and by the number of distinct social platforms, each with their own constraints and cultures \citep{hanna2011}.
+
+There are a number of challenges when considering maintaining the social web as an inclusive platform for diverse and vibrant content, especially debate and discussion. There is a tendency for users to interact and associate with others who are similar in terms of traits, (such as race, age, or education) and beliefs (such as religion or politics), known as homophily \citep{sherchan2013} and is compounded by the introduction of ``filter bubbles'', the effect of content providers tailoring search results or default displays towards the preferences of individual users 
+\citep{pariser2011}. This can lead to sites becoming ``echo chambers'' in which well-known views and opinions are repeated, little original content is produced and there is virtually no dissent or debate \citep{gilbert2009}. This can be further exacerbated by reputation systems, enforcing which views are acceptable in a given community by rewarding users who agree and punishing those who disagree, or those considered ``outsiders'' of the accepted group or culture. At the opposite end of the spectrum, where there is constant and stimulated debate, there is equal (if not greater) potential for conflict. While critical and reasonable debate, and even (respectful) recreational quarrels, are things to be encouraged, there is a visible tendency to ``shout down'' the opposition, including attempts to silence dissenting opinions through abuse and threats. As a result online communities can become incredibly hostile spaces, culminating in anti-social behaviour, including vulgar abuse and, at the most extreme, threats of sexual violence, and death threats \citep{willard2007, jane2014}. 
+
+However, in this document the case is made that disregarding these interactions from argumentation models is a mistake. Accurately modelling them is the first step towards understanding exactly how argumentation is applied across the social web, and the ways in which creators and consumers of social media engage with argumentation. This information can then be applied towards creating tools and environments that discourage these types of abuse to facilitate more social argumentation.
+
+
+\section{Hypothesis and Research Questions}
+\label{introduction:hypothesis}
+One key feature of social argumentation is the notion of the (presence of) an audience \citep{Van2004, jimenez2007}. The audience's perception of the argument is something that is often overlooked in formal models of argument, despite evidence that perception of argument can be altered through multiple means such as cultural associations \citep{suzuki2011}, pre-existing biases \citep{Arceneaux2012} or peripheral information\citep{lee2014}. The ultimate aim of this research is to explore how perception of argumentation specifically on the social web can be altered based on the types of tactics used, and how this can be used to develop more thorough models of argumentation. To achieve this, it is first important to be able to correctly model and represent the arguments that occur socially. In this way, the key features of informal arguments can be identified and categorised. This can then be used to determine exactly which features of argumentation are considered most important by users, and those that they are most likely to engage, reply to, critique, and how these features shape users' overall interpretation of an argument. The work described in this thesis examines how formal models currently map arguments, and applies a combination of these models to an argument (or arguments) on the social web to determine which features are well captured, and those that are not. This has led to the formulation of a hypothesis that the presence of particular rhetorical tactics affects both a user's perception of an argument, and the way in which they engage with it.
+
+This forms the basis of the hypothesis which is examined in the body of this thesis:
+
+\textit{``A model of eristic argumentation on the social web should include both logical and rhetorical tactics, as the inclusion of rhetorical techniques affects the way in which users perceive and engage with the argument''}
+
+This can be resolved into three distinct research questions:
+\begin{enumerate}
+\item \textit{Is modelling eristic argumentation a valuable direction of work?}
+\item \textit{Are current frameworks and tools sufficient to model eristic argumentation on the social web?}
+\item \textit{How should rhetorical techniques be included in a model of eristic argumentation on the social web?}
+\item \textit{Do rhetorical techniques affect the way in which users perceive and engage with the argument?}
+\end{enumerate}
+
+Question one is perhaps the most important question, as it determines the overall value of this work. It is best answered in several different parts; firstly, by literature review, secondly, by an analysis of techniques commonly used in social argumentation, and thirdly by interviewing experts in fields that commonly use, model or support argumentation.
+
+Question two focuses on determining whether it is currently possible to accurately describe argumentation occurring on the social web in terms of pre-existing models. Through a review of existing literature and a short exploratory work in the area, the current state-of-the-art will be examined and their suitability at modelling personal, social, and rhetorical argument will be evaluated.
+
+Question three revolves around the most appropriate means of representing rhetorical tactics. Clearly, providing an exhaustive list of all possible examples of rhetorical tactics would not only be infeasible, but also unlikely to provide any value to modellers or analysts. Therefore, to determine the most effective means of representing these tactics, modellers and analysts should be consulted to determine the most effective method, with an emphasis on the purpose of use.
+
+Question four focuses on the practical implications of this work; that is to say, whether the users of social media perceive arguments using different logical and rhetorical tactics in different ways, and whether this drives them to engage in different manners. This makes it important to define the terms perception and engagement. Perception can be thought of as the way in which users understand the tone, persuasiveness, entertainment value or information content of an argument \citep{sundar2000}. Engagement, conversely, can be thought of as how likely they are to, and in which they respond to or participate in the argument itself. This not limited to replying to a post: users of social media can engage in multiple ways, including replying, sharing or voting \citep{markova2013}.
+
+
+\section{Contributions}
+The work discussed in this thesis has formed the basis of a number of papers, published in the workshop of Computational Models of Natural Argument \citep{Blount2014}, ACM Conference on Hypertext and Social Media \citep{Blount2015}, the workshop of Narrative and Hypertext \citep{Blount2015role} and the Conference of Computational Models of Argument \citep{Blount2016rhetorical}.
+
+\section{Report Structure}
+Background information on the topic area, both in argumentation and online behaviour, as well as the state of the research field at present, is discussed in Chapter \ref{background}.
+A preliminary investigation into the capabilities of current models of social argumentation, and an analysis of the results, is detailed in Chapter \ref{investigation}.
+This is expanded in Chapter \ref{aswo}, in which these models are developed and adapted to encompass further social and rhetorical information, and are used to examine the prevalence of a subset of rhetorical tactics in web-based argumentation and their correlation with machine readable features (such as post length, language, etc.).
+\TODO{Chapters EXPERT and PERCEPTION}
+In Chapter \ref{expert}, an expert review of the proposed changes to the 
+Chapter \ref{perception}
+Finally, Chapter \ref{conclusionsfuture} sums up the findings and outlines a plan for a final thesis and future work.

@@ -1,0 +1,253 @@
+%% ----------------------------------------------------------------
+%% Conclusions.tex
+%% ---------------------------------------------------------------- 
+
+
+\chapter{Conclusions and Future Work}
+\label{conclusionsfuture}
+
+\section{Findings}
+\label{conclusionsfuture:findings}
+The work described in this report covers an examination of the capability of current argumentation models, in particular the application of a combination of the AIF and SIOC ontologies to the social web, and the extension of these models to capture social and rhetorical information. Case-studies were carried out on three different areas of the social web to determine the strengths and weaknesses of modelling social, eristic argument on the web. This preliminary work indicated that existing techniques for modelling argumentation were insufficient to capture the structure and dynamic of argumentation taking place on the social web, which led to the publication of a paper in \textit{the 14th workshop on Computational Models of Natural Argument}, detailing these omissions and proposing a set of augmentations to capture additional socio-rhetorical tactics \citep{Blount2014}. These extensions were implemented and trialled as part of an investigation re-examining the previous case-studies to determine the prevalence of rhetorical tactics in argumentation within areas of the social web and look for correlations that can be drawn between the use of these tactics and the machine-readable characteristic of the post such as length or readability. The results of this will published in the upcoming \textit{ACM Conference on Hypertext and Social Media} \citep{Blount2015}. These investigations reveal the following findings.
+
+Firstly, and most importantly, rhetorical tactics are shown to be present throughout the argumentation in the case studies, even when only accounting for a small subset of rhetorical argumentation. Clearly, failure to accurately model these social argumentation strategies is detrimental to the goal of studying how discussions evolve on the social web. Secondly, in the three use cases, rhetorical tactics are most often used by either those contributing the most to the discussion overall, or by those who do not contribute logically at all. Whether this effect is related to a participant's engagement is unknown. However, this raises the possibility that there is a tipping-point in a dialectic logical debate where participants feel the need to expand their use of tactics; alternatively, these users simply interleave both types of tactics throughout their arguments$_2$. Finally, while the features of the argumentation structure above are challenging to detect automatically and expensive to manually annotate, the markers present in the social media sphere are relatively trivial to detect, and some correlations between the two can be observed.
+
+%\subsection{Limitations}
+The primary limitation of this work is the necessity to manually annotate all the data. This is time consuming and subjective, but as yet there is no way to circumvent this process and automatically extract premises and conclusions. A further constraint is that only English-language sites are examined. There are, of course, many other social media services that cater to audiences of different languages, such as \textit{Renren}\footnote{http://renren.com/} for China or \textit{VKontakte}\footnote{http://vk.com/} for eastern Europe. However, this separation is mitigated by the fact that different languages (and different cultures) have their own rhetorical structures and argumentation schemes \citep[p.~21]{Van2004}. As a result, attempting to analyse multiple sites with different primary languages concurrently would distort any patterns that might emerge in the argument structure of the users.
+
+\subsection{Hypothesis and Research Questions}
+\label{conclusionsfuture:future:hypothesis}
+Revisiting the hypothesis initially proposed in Section \ref{introduction:hypothesis}:
+
+\textit{``A model of eristic argumentation on the social web should include both logical and rhetorical tactics, as the inclusion of rhetorical techniques affects the way in which users perceive and engage with the argument''}
+
+This was resolved into three distinct research questions:
+\begin{enumerate}
+\item \textit{Are current frameworks and tools sufficient to model eristic argumentation on the social web?}
+\item \textit{Is modelling eristic argumentation valuable?}
+\item \textit{Which rhetorical techniques should be included in a model of eristic argumentation on the social web?}
+\item \textit{Do rhetorical techniques affect the way in which users perceive and engage with the argument?}
+
+\end{enumerate}
+
+Based on the proceeding body of work, these questions can now effectively be answered as follows:
+
+\TODO{The first question}
+
+\TODO{The second question}
+
+\TODO{The third question}
+
+\TODO{The final question}
+
+
+\section{Proposals for Future Work}
+\TODO{Further refinement/review of ASWO}
+The development of the ASWO has been, and should continue to be, an evolving process. Further refinement and expert review will
+This includes returning to the proposals laid out in Section \ref{investigation:proposals}, which discusses other aspects of social argumentation that require additional efforts to model, including the notion of social meta-data such as up-/down-votes.
+
+\TODO{Perception of reputation systems (likes, retweets etc.)}
+
+\TODO{Multi-comment/overall thread perceptions?}
+
+
+\TODO{Workshop experiment; categorisation/classification of argument tactics; instructed non-experts vs trained non-experts (vs experts)}
+
+
+Based on the investigations that have been carried out, and the findings described in Section \ref{conclusionsfuture:findings}, there are three particular avenues of future work that could be approached, using this extended model of social argumentation at their core.
+
+Firstly, as is the focus of many researchers in this field, attention can be given to the use of artificial intelligence and argumentation, whether by reasoning over a model of argument in an attempt to determine the most valid argument and subsequent course of action \citep{caminada2007} or by using the model to influence the techniques and strategies of intelligent agents involved in dialogue games \citep{Reed2008}. However, the fact that the eristic features of the model are unlikely to be practical (or appropriate) for the use of reasoning, or governing inter-agent negotiations is likely what has caused them to be currently excluded from the majority of formal models. Disregarding this, the weakness of this approach is that the model cannot, at this stage, be automatically constructed, but must be created through a time and labour intensive process of manual annotation. Therefore, using the model as a basis of reasoning over argumentation in general is ultimately flawed. Any gains that were achieved in this area would be rendered moot by the cost of creating a model for every argumentation to be reasoned over, and rendered impractical on a web-scale.
+
+With this in mind, the second avenue would be to generate this model from the arguments$_2$ themselves, by means of natural language processing \citep{palau2009}, the use of social machines \citep{hendler2010} or some combination thereof. This would go some way towards solving a large outstanding issue in the field \citep[p.~31-32]{Schneider2013}. While working towards a means of automatically generating the model has potential, it is likely that the social and eristic nature of the arguments to be modelled is the very thing that hinders this approach. Web-based culture and language is made up of many disparate groups, and continues to rapidly and constantly evolve, which renders current natural language processing impractical in the short term and ineffective in the long term, without the use of domain-specific normalisation techniques that are expensive or inaccurate \citep{han2011, eisenstein2013}. While the findings in Section \ref{aswo:results} point towards a means of broadly classifying a post as containing different types of logical or rhetorical elements, with reasonable probability, the overall structure may be difficult to model automatically. Clearly, at this stage, human input cannot be wholly eliminated. However, with the use of crowd-sourcing or social machines, the large effort cost of annotating arguments$_2$ could be distributed across participants to a manageable level.
+
+Finally, emphasis could be placed on the social aspect of argument. Because argumentation is a social process conducted by people, it is important to recognise the fact that individuals may perceive the same argument$_2$ in many different ways due to cultural beliefs \citep{suzuki2011}, pre-existing cognitive biases \citep{Arceneaux2012}, as well as features surrounding the content of the argument$_1$ such as avatars \citep{lee2014}. The advantage of this approach is that it uses the existing model as a platform for experimentally evaluating how the use and prevalence of different argumentation tactics affect users' perceptions of an argument$_2$, and the way in which they engage with the thread (and one another) as a result. By using the model as a tool for analysing individual case studies, the requirements for creating and annotating the necessary argumentation structures are greatly constrained, while allowing the findings to be used in further work in the research area. This contribution to the field can then be used to assist further work in a number of other areas, such as another metric for use with adaptive recommendation techniques to match people based on preferred argumentation strategies \citep{guy2010}, or the development of argumentation frameworks that integrate with the social web \citep{torroni2010}.
+
+
+%\begin{table}
+%\centering
+%\caption{Example classifications of argumentation posts}
+%\label{table:annotations}
+%\begin{tabular}{| l | p{10cm} | l}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LOGIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\cline{1-2}
+%\textbf{Information} & This post contains (purportedly) factual information & \rdelim\}{17}{3mm}[\parbox{3cm}{Logical\\ tactics}]\\
+%\cline{1-2}
+%(example) & \textit{``Here's a List of 313+ Employers Who Have Cut Hours Because of Obamacare...''} \\
+%\cline{1-2}
+%\textbf{Logical Support} & This post supports another post or point of view by providing supplementary evidence, attempting to invoke the authority of the author, or another logical tactic \\
+%\cline{1-2}
+%(example) & \textit{lol, right ? They don't get that if everyone has access to affordable healthcare then everyone pays their fair share} \\
+%\cline{1-2}
+%\textbf{Logical Attack} & This post attacks another post or point of view by providing contrary evidence, attempting to undermine the authority of the author, or another logical tactic \\
+%\cline{1-2}
+%(example) & \textit{``No one ``negotiates'' over laws that have already passed''} \textit{``Really? Then why isn't the Volstead Act still the law of the land?''} \\
+%\cline{1-2}
+%\textbf{Transitionary} & This post attempts to move the argument forwards by asking questions or prompting further debate \\
+%\cline{1-2}
+%(example) & \textit{``If you know the numbers, then please tell me how many Dems lost their seat the last two rounds?''} \\
+%\cline{1-2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RHETORIC %%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%\textbf{Personal Support} & This post expresses support for another user (rather than their argument) & \rdelim\}{15}{3mm}[\parbox{3cm}{Rhetorical\\ tactics}]\\
+%\cline{1-2}
+%(example) & \textit{``I commend you for admitting that debt \& deficits are important...If only more [people] felt the way you do''} \\
+%\cline{1-2}
+%\textbf{Personal Attack} & This post attacks, abuses or threatens another user (rather than their argument) \\
+%\cline{1-2}
+%(example) & \textit{Fuck off cunt} 
+%\\
+%\cline{1-2}
+%\textbf{Calls to action} & Posts that advocate a particular course of action \\
+%\cline{1-2}
+%(example) & \textit{``Kill them now, impeach them now. The american people dont need masters''} \\
+%\cline{1-2}
+%\textbf{Meta-argumentation} & Posts that argue about the argument itself -- whether commenting on the rules of the medium or proposing a way participants should argue ``properly''\\
+%\cline{1-2}
+%(example) & \textit{``Down voting = disagree Upvoting = agree''} \textit{``The rules say explicitly not to do that.....''} \\
+%\cline{1-2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OTHER %%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%\textbf{Conversational} & Posts that do not put forward, support or attack a particular view, but make small talk or converse with participants and/or the audience & \rdelim\}{12}{3mm}[Other]\\
+%\cline{1-2}
+%(example) & \textit{``...I think I am all politically talked out for the night lol, I need to finish some work''} \\
+%\cline{1-2}
+%\textbf{Off topic} & Posts that do not relate to the topic being discussed\\
+%\cline{1-2}
+%(example) & \textit{``Ataturk did revolution ! building moderate muslim network is oxymoron which has been destroy secular , democratic, rule of law in Turkey...''} \\
+%\cline{1-2}
+%\textbf{Other} & The only exclusive category, posts which match none of the above criteria\\
+%\cline{1-2}
+%(example) & \textit{``[This post has been deleted]''} \\
+%\cline{1-2}
+%\end{tabular}
+%\end{table}
+%
+%
+%%\paragraph{Tasks:}
+%%\begin{itemize}
+%%\item Recruit annotators
+%%\item Conduct annotations
+%%\item Check consensus/inter-rater reliability
+%%\item Analyse data
+%%\end{itemize}
+%
+%\paragraph{Outcome:} A dataset annotated with a broader sub-set of rhetorical tactics used in nine different argumentative discussions and an analysis of the uses of granular rhetorical tactics across different spheres of the social web.
+%
+%\paragraph{Estimated Time:} 4 months
+%
+%
+%\subsection{Work Package 2a: Interpretation and Engagement Pilot}
+%\paragraph{Description:} To determine an appropriate bounding on the length of experiment and participant overload, a short pilot study will be conducted. This will aim to asses how the number of posts per thread affects the required time for participants to complete the study and the quality and quantity of responses.
+%
+%%\paragraph{Tasks:}
+%%\begin{itemize}
+%%\item Recruit participants
+%%\item Trial
+%%\end{itemize}
+%
+%\paragraph{Outcome:} Appropriate weightings for participant load during the main experiment described in Work Package 2b
+%
+%\paragraph{Estimated Time:}2 months
+%
+%
+%\subsection{Work Package 2b: Interpretation and Engagement Study}
+%\paragraph{Description:} To determine the effect of rhetorical techniques on the perception of eristic argumentation on the social web, a within-participant experiment will be conducted in which voluntary participants are shown the argumentation threads annotated in Work Package 1b. 
+%
+%Each participant will be shown three different argumentation threads, each of which originates from a different social media platform. Each thread will be ``pruned'' according to the coarse-grained groups from Work Package 1b so that each users sees one thread containing only rhetorical tactics, one thread containing only logical tactics and one thread containing both rhetorical and logical tactics. Posts that are annotated as containing multiple tactics will be included on a non-exclusive basis (i.e. if a post is marked as containing both logical and rhetorical tactics, it could be displayed in any of the three combinations of tactics). The groups containing rhetorical content will also display social features such as reputation systems. These may need to be normalised across each social biome to prevent participants inferring the likely source platform. The annotations in Work Package 1b cover three different biomes (A, B and C) with three different threads from each (1, 2 and 3), which leads to the proposed potential participant grouping show in Table \ref{table:participant-grouping}.
+%
+%\begin{table}
+%\centering
+%\caption{Proposed potential participant groupings}
+%\label{table:participant-grouping}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\textbf{Participant Group} & \textbf{$R + O$} & \textbf{$L + O$} & \textbf{$R + L + O$} \\
+%\hline
+%1 & A1 & B2 & C3\\
+%\hline
+%2 & C3 & A1 & B2\\
+%\hline
+%3 & B2 & C3 & A1\\
+%\hline
+%4 & A2 & B3 & C1\\
+%\hline
+%5 & C1 & A2 & B3\\
+%\hline
+%6 & B3 & C1 & A2\\
+%\hline
+%7 & A3 & B1 & C2\\
+%\hline
+%8 & C2 & A3 & B1\\
+%\hline
+%9 & B1 & C2 & A3\\
+%\hline
+%\end{tabular}
+%\end{table}
+%
+%Datapoints per experimental factor ($D$) can be calculated from the number of threads shown to each participant ($T$), the number of participants ($N$), total tactic combinations ($C$) and the number of different social media biomes used ($B$) using the formula $D = \frac{T \times N}{C \times B}$. Given that the experiment is within-participants, each participant should be shown an equal number of threads and combinations of tactics ($T=C$). This constrains the number (and hence, granularity) of categories that can be examined through this experiment, but ensures that any variance between participants should be controlled for. Therefore, given that three social media platforms will be annotated, for an adequate number of datapoints ($>30$), the number of participants required is $N > 90$.
+%
+%The presentation of the arguments$_2$ themselves will be in a uniform format, to avoid leading participants to make judgements based on the (perceived) culture of the original platform. Usernames will be semi-anonymised; real names will be removed, as will artefacts revealing the source site (such as the ``@'' prefix used on Twitter), but ``screen names'' (such as \textit{DemsAbroad} or \textit{Tea4gunsSC}) can give an insight to a user's views and motivations \citep[p.~379]{cornetto2006} and while it is conceivable that a participant may have interacted with the user before it is sufficiently unlikely in practice to warrant their inclusion. Participants will need to be regular users of the social web. Given the particular topic of discussion in the dataset, care must be taken to ensure that biases are identified during selection and accounted for during analysis of results. This can also be mitigated through use of a pre-test questionnaire to capture demographic data, topic interest and account for any biases -- due to the topic at hand, this may also require asking participants what they consider their political affiliations.
+%
+%The majority of questions in the questionnaire will ask participants to rate their agreement with a series of statements on a Likert scale. To determine how participants' perception of the argument$_2$ changes, statements will be based on the work of \citet{sundar2000}, which examines perception of news media by asking participants to rate news stories 
+%a series of adjectives including accurate, biased, comprehensive, factual, informative, persuasive, sensationalistic and well-written. The precise adjectives to be used in the survey will need to be resolved to match the platform being examined, but may include statements such as:
+%
+%\begin{itemize}
+%\item \textit{Overall, I found the debate polite}
+%\item \textit{Overall, I found the debate informative}
+%\item \textit{Overall, I found the debate entertaining}
+%\end{itemize}
+%
+%These can be interleaved with qualitative questions of the form \textit{Please expand on the justification for your choices.}
+%
+%To determine how participants' engagement may be altered, the Likert statements will take into account the work of \citet{markova2013}, in which they discuss the different types of engagement within social media: consumption, curation, creation and collaboration. These are reflected in the statements chosen:
+%
+%\begin{itemize}
+%\item \textit{I would like to see more posts by these users}
+%\item \textit{I would consider responding to this debate by replying with a comment of my own}
+%\item \textit{I would consider responding to this debate by voting on these posts}
+%\item \textit{I would consider sharing this debate with my friends}
+%\end{itemize}
+%
+%Such questions could be further supplemented with questions of the form \textit{Which user(s) did you find most informative? (Select up to three)}, \textit{Which user(s) did you find least polite? (Select up to three)} or \textit{Which user(s) did you feel had the most powerful argument? (Select up to three)}. This allows, to some degree, the examination of how an individual's posting style can impact the debate, and might also highlight any biases towards certain users and/or points of view. %Additional qualitative questions, such as \textit{What do you feel was the upshot of the debate?} will also be included.
+%
+%The experiment itself will be run for a period of three months, which should be adequate time to accumulate the necessary participants, with sufficient additional time beforehand to prepare, and afterwards to analyse the results.
+%Analysis will compare the responses of participants who have seen the same thread, but different combinations of tactics used, to determine how their viewpoints differ. Comparative evaluation will also show how each user reacts to each tactic-grouping. This will then feedback into the formalised model developed in Work Package 1a, and be written up as a journal article.
+%
+%%\paragraph{Tasks:}
+%%\begin{itemize}
+%%\item Plan/form questionnaire
+%%\item Create experimental framework
+%%\item Recruit participants
+%%\item Carry out experiment
+%%\item Analyse results
+%%\item Write journal paper
+%%\end{itemize}
+%
+%\paragraph{Outcome:} An analysis of the experiment, and a journal paper detailing the process and results.
+%
+%\paragraph{Estimated Time:} 5.5 months
+%
+%\subsection{Work Package 3: Write-up of Thesis}
+%\paragraph{Description:}
+%Having completed these experiments and the analysis of the results, a thesis will be written to describe the findings, determine the effect of rhetorical features on eristic argument and resolve the hypothesis.
+%
+%%\paragraph{Tasks:}
+%%\begin{itemize}
+%%\item Write up body of work as thesis
+%%\item Have thesis printed and bound
+%%\end{itemize}
+%
+%\paragraph{Outcome:}Printed and bound thesis
+%
+%\paragraph{Estimated Time:}6 months
+%
+%
+%\subsection{Gantt Chart}
+%\begin{sidewaysfigure}
+%\centering
+%\includegraphics[scale=0.45]{./figures/gantt/gantt.png}
+%\caption{Gantt chart detailing the next three Work Packages}
+%\label{figure:rhetorictime:Twitter}
+%\end{sidewaysfigure}
+
+
+\section{Conclusions}
+Argumentation, like the social web itself, is a diverse construct that is challenging to model but has huge potential if correctly harnessed. Rhetoric and logic are both important aspects of online social argumentation; to accurately model how arguments occur and evolve across social media it is important to take into account all the techniques and tactics that are employed. While it is difficult to determine the value of a contribution, to define all logical contributions (and only logical contributions) as valuable is a naive approach. Being able to accurately record all aspects of argumentation on social media is the first step towards being able to accurately analyse informal argument on an enormous scale. The work presented in this report provides a novel framework for modelling a subset of rhetorical argumentation, ideal for use in modelling social argumentation, and demonstrates some of the structures that may be observed when applied to three case studies. Bringing rhetorical and logical models of argumentation together with the computational modelling of social media argumentation has the potential to be a powerful tool in both our understanding of social media use and social argumentation. This raises the prospects for the development of new tools that could help communities manage argumentation, and counter diverse problems, from echo-chambers and groupthink to trolling and anti-social behaviour.

@@ -1,0 +1,92 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex
+%% ---------------------------------------------------------------- 
+%% Final copy must be double sided printing.
+\documentclass[twoside]{ecsthesis}      % Use the Thesis Style
+\graphicspath{{./figures/}}   % Location of your graphics files
+\usepackage{natbib}            % Use Natbib style for the refs.
+\usepackage[all]{xy}
+\usepackage{float}
+\usepackage{mathptmx}
+\usepackage{fixltx2e}
+\usepackage{listing}
+%\usepackage[figuresright]{rotating}
+\usepackage{pbox}
+\usepackage{multirow,bigdelim}
+\usepackage{alltt}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,shapes.geometric,positioning}
+%\removecolourlinks    % Uncomment this command to remove colour from any links
+\usepackage{bibentry}
+\nobibliography*
+\usepackage{color}
+\usepackage{soul}
+\newcommand{\TODO}[1]{\hl{TODO: #1}}
+
+%\input{Definitions}            % Include your abbreviations
+%% ----------------------------------------------------------------
+\begin{document}
+\frontmatter
+\title      {An Investigation into Dialectic and Eristic Argumentation on the Social Web}
+\authors    {\texorpdfstring
+             {\href{mailto:tb12g09@ecs.soton.ac.uk}{Tom Blount}}
+             {Tom Blount}
+            }
+\department  {Electronics and Computer Science}
+\group       {Web and Internet Science}
+\addresses  {\groupname\\\deptname\\\univname}
+\date       {\today}
+\subject    {}
+\keywords   {}
+\supervisor {Dr David Millard\\Co-Supervisor: Dr Mark Weal}
+\examiner   {Dr Nicholas Gibbins}
+\maketitle
+\begin{abstract}
+Argumentation, debate and discussion are key facets of human communication, shaping the way people form, share and promote ideas, hypotheses and solutions to problems. Argumentation can broadly be broken down into collaborative problem solving or truth-seeking (known as dialectic argumentation) and quarrelling without hope for a resolution, either aggressively or for the purpose of recreation, catharsis or entertainment (known as eristic argumentation). Techniques used within argumentation can likewise be classified as primarily fact-based (logical), or emotion/audience-based (rhetorical).
+
+The social web, consisting of the people, tools and communities that form over the world wide web, is a growing way in which individuals, social groups and even corporations share content, ideas and information, as well as hold discussions and debates. As the social web becomes more widely used, the potential for using it as a means to study how people communicate and collaborate on an enormous scale dramatically increases. Current models of argumentation often focus on formal argumentation techniques, in which participants are expected to abide by a stringent set of rules or practices. However, on the social web there is no such code of conduct. Antisocial behaviour, which often stems from argumentation, can have a negative impact on online communities, driving away new users and stifling participation.
+
+Case-studies were carried out on three different areas of the social web to determine the strengths and weaknesses of modelling social, eristic argument on the web when using current models and ontologies. This preliminary work indicates that existing techniques for modelling argumentation are insufficient to capture the structure and dynamic of argumentation taking place on the social web. 
+\newpage
+Following this, augmentations were made to current modelling ontologies for the purpose of capturing a sub-set of rhetorical tactics. These were then used as part of an investigation re-examining the previous case studies to determine the prevalence of rhetorical tactics in argumentation within areas of the social web as well as investigating correlations that may be drawn between the use of these tactics and the machine-readable characteristic of the post (e.g. length, word-complexity, etc.). It was found that even this small sub-set of rhetorical tactics was regularly employed throughout each case study. Correlations between tactics and post features were also found, although these were not conclusive due to the discrete and binary nature of the features examined.
+
+Based on these observations, future work will focus on extending the argumentation model further to capture additional rhetorical information, due to the importance of these types of interactions. This will be used in an experiment to analyse how different rhetorical and eristic features impacts users of the social web participating in discussion, and how this affects their perceptions of the topic and engagement with the argument. The results of this can then be used to further supplement the model of eristic argumentation on the web.
+
+\end{abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+
+%% -----------------------
+%% lstpatch.sty
+%% -----------------------
+%% lstpatch cannot be distributed with these files. I believe it is only needed if the
+%% \lstlistoflistings is used. So this has been turned off by default. Re-add if required:
+%% \usepackage{lstpatch}
+%% \lstlistoflistings
+%% You will need to download lstpatch, possibly from:
+%% http://web.mit.edu/texsrc/source/latex/listings/lstpatch.sty
+%% -----------------------
+
+
+\acknowledgements{Thanks to both my supervisors David Millard and Mark Weal for their guidance, advice and support throughout this work. My thanks also go to my partner, for her love and support, and to my friends, who have encouraged and assisted me on my journey. Last, but not least, thanks go to the EPSRC for providing the funding for this work.}
+%\listofsymbols{ll}{$w$ & The weight vector}
+\mainmatter
+%% ----------------------------------------------------------------
+\input{Introduction}
+\input{Background}
+\input{Preliminary}
+\input{ASWO}
+\input{Conclusions}
+
+\backmatter
+\bibliographystyle{apalike}
+\bibliography{library}
+
+%\mainmatter
+%\appendix
+%\input{appendices/excerpts/Excerpts}
+%\input{appendices/raw_data}
+%\input{appendices/aswo}
+\end{document}
+%% ----------------------------------------------------------------
