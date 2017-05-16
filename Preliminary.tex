@@ -1,4 +1,4 @@
-\chapter{Investigating Current Modelling Frameworks}
+\chapter{Preliminary Investigation into Modelling with the AIF}
 \label{investigation}
 To determine how capable current tools and frameworks are for capturing social argumentation, and the nuances between dialectic and eristic argumentation, a preliminary investigation was conducted. This aimed, firstly, to show how these tools and frameworks can be combined in a way that makes them fit for this particular purpose and, secondly, to determine the key strengths and weaknesses of this combination in relation to modelling social argumentation.
 
@@ -47,24 +47,23 @@ The discussions surrounding these posts were acquired by collecting comments rep
 \centering
 \caption{Metrics of total dataset collected from YouTube, Twitter and Facebook}
 \label{table:results:totalstats}
-\begin{tabular}{| l | c | c | c | c |}
-\hline
+\begin{tabular}{ l | r  r  r }
 \textbf{Metric} & \textbf{YouTube} & \textbf{Twitter} & \textbf{Facebook} \\
 \hline
 Total number of posts 				& 2719 & 137 & 9494 \\
-\hline
+
 Total number of users 				& 1255 & 33 & 6224 \\
-\hline
+
 Average posts per user 				& 2.17 & 4.15 & 1.53 \\
-\hline
+
 Average words per post 				& 26.74& 15.91 & 40.12  \\
-\hline
+
 Average characters per post 		& 150.13 & 97.63 & 241.14 \\
-\hline
+
 Time between first and last posts 	& 101d 16h 19m 12s & 0d 13h 40m 48s & 90d 19h 55m 12s\\
-\hline
-Average time between posts			& 53m 52s & 3m 2s & 13m 47s \\
-\hline
+
+Average time between posts			& 53m 52s & 3m 02s & 13m 47s \\
+
 \end{tabular}
 \end{table}
 
@@ -90,24 +89,24 @@ Thirty posts from within the following discussion (i.e. not including the origin
 \centering
 \caption{Metrics of discussions sampled from YouTube, Twitter and Facebook}
 \label{table:results:samplestats}
-\begin{tabular}{| l | c | c | c | c |}
-\hline
+\begin{tabular}{ l | r r r r }
+
 \textbf{Metric} & \textbf{YouTube} & \textbf{Twitter} & \textbf{Facebook} & \textbf{All}\\
 \hline
 Total number of posts & 30 & 30 & 30 & 90\\
-\hline
+
 Total number of users & 23 & 12 & 30 & 65\\
-\hline
+
 Average posts per user & 1.30 & 2.50 & 1.00 & 1.38\\
-\hline
+
 Average words per post & 26.77 & 16.33 & 42.10 & 33.18\\
-\hline
+
 Average characters per post & 147.90 & 101.20 & 259.67 & 201.70\\
-\hline
+
 Time between first and last posts & 4d 0h 54m 56s & 0d 5h 13m 33s & 3d 12h 13m 18s & n/a\\
-\hline
+
 Average time between posts & 3h 20m 31s & 0h 10m 49s & 2h 54m 15s & 0h 17m 10s\\
-\hline
+
 \end{tabular}
 \end{table}
 
@@ -119,34 +118,34 @@ An overview of the raw data collected from each platform is shown in Table \ref{
 \centering
 \caption{Aspects of raw data from social media APIs capable of being modelled using the AIF or SIOC ontologies}
 \label{table:method:features}
-\begin{tabular}{| l | c | c |}
-\hline
-\multirow{2}{*}{\textbf{Features present in social media APIs}} & \multicolumn{2}{c|}{\textbf{Represented in:}}\\
-\cline{2-3}
+\begin{tabular}{ r | c | c }
+
+\multirow{2}{*}{\textbf{Features present in social media APIs}} & \multicolumn{2}{c}{\textbf{Represented in:}}\\
+
  & \textbf{AIF} & \textbf{SIOC} \\
 \hline
 Locution (explicit content)& $\checkmark$ & $\checkmark$ \\
-\hline
+
 Illocution (premises/conclusions) & $\checkmark$ & \\
-\hline
+
 Argumentation structure (attacks/support) & $\checkmark$ & \\
-\hline
+
 Author  		& $\checkmark$ & $\checkmark$ \\
-\hline
+
 Avatar  		&  			   & $\checkmark$ \\
-\hline
+
 Replies 		& $\checkmark$ & $\checkmark$ \\
-\hline
+
 Creation Date  	& $\checkmark$ & $\checkmark$ \\
-\hline
+
 Reputation (e.g. ``Likes'')  &  &  \\
-\hline
+
 Location  &  &  \\
-\hline
+
 User ``Type'' (i.e. individual/business/etc.)  &  &  \\
-\hline
+
 Sentiment (implicit content) &  &  \\
-\hline
+
 \end{tabular}
 \end{table}
 
@@ -221,61 +220,6 @@ In addition, there are other posts that have deeper contextual meaning that woul
 
 There are of course limitations on the conclusions that can be drawn from a relatively small dataset when working with proverbial ``big data''. As such, these findings cannot be used to justify broad claims that state that \textit{all} arguments on a particular example of social media are structured in this way. These examples instead serve to demonstrate the important fact that different types of structures \textit{can} evolve, and provide some examples of the argumentative and rhetorical tactics people use when arguing over social media and how the conjunction of the AIF and SIOC projects (as well as any extensions made to these) can be used in attempts to map them.
 
-\newcommand{\scaleProps}{0.7}
-
-\section{Proposals}
-\label{investigation:proposals}
-These results formed the basis for the work presented in the Workshop on Computational Models of Natural Argument, in which a number of suggestions on how these ontologies could be adapted to model the socio-rhetorical aspects of argumentation were proposed \citep{Blount2014}.
-
-These proposals included suggestions for modelling social web specific features, such as the use of reputation systems. Reputation systems make up a key aspect of non-verbal argumentation on the social web, allowing users to show agreement or disagreement to a position, sometimes anonymously, without the need to articulate their own position. Thought must be given as to how to accurately represent this in a formal model. Figure \ref{figure:cmna:likes2} shows one such approach; namely, modelling each vote as a separate Locution, linking to an I-node that either (logically) supports or attacks the voted-on post. Alternatively, Figure \ref{figure:cmna:likes1} shows an approach which aggregates this information into a single Reputation node. This has the advantage of keeping to social information distinct from the logical graph structure, but the disadvantage of omitting how much each UserAccount contributed to the reputation.
-
-
-\begin{figure}
-\centering
-\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/likes2.png}
-\caption{Proposal for representing reputation systems by modelling up- and down-votes as individual Locutions}
-\label{figure:cmna:likes2}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/likes1.png}
-\caption{Proposal for representing reputation systems with the introduction of a Reputation node}
-\label{figure:cmna:likes1}
-\end{figure}
-
-
-Another focus of the discussions was that of abusive rhetorical attacks.
-Figure \ref{figure:cmna:abuse1} shows the simplest approach, similar to the current way the AIF models the use of \textit{ad hominem} attacks, by linking the attack to the opponent's argument$_1$ with a CA-node. However, this is insufficient for the majority of abusive attacks; while \textit{ad hominem} tactics attack an opponent's argument$_1$ by claiming they are not qualified, or otherwise unfit, to make such an argument$_1$, abuse often does not attack their position at all, but seeks to undermine them emotionally in front of their peers. This mapping can be modelled by linking the content of the locution to the targeted user's account as shown in Figure \ref{figure:cmna:abuse2}. However, a UserAccount can be involved in any number of topics, and be attacked for any number of reasons. Furthermore, a person can choose to present themselves as a dramatically different person (having different credentials, skills, opinions or even race, religion or gender) when they are on the web as opposed to off. They may even choose to represent themselves differently between individual threads and discussions. To this end, another type of node is needed to represent the abstract notion of the ``persona'' a user presents. This is illustrated by Figure \ref{figure:cmna:abuse3}. Introducing the idea of personas allows each UserAccount to present a different view of themselves (that can be supported or attacked accordingly) when engaging in multiple discussions or topics.
-
-
-\begin{figure}
-\centering
-\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/abuse1.png}
-\caption{Proposal for representing abusive attacks as solely within the argument$_1$ structure}
-\label{figure:cmna:abuse1}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/abuse2.png}
-\caption{Proposal for representing abusive attacks as connected with the social aspect of the argument$_2$, attacking the author directly}
-\label{figure:cmna:abuse2}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/abuse3.png}
-\caption{Proposal for representing abusive attacks, extending that shown in Figure \ref{figure:cmna:abuse2} with the addition of Persona nodes}
-\label{figure:cmna:abuse3}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{./figures/graphs/aswo-personal-conflict.png}
-\caption{Proposal for representing abusive attacks, extending that shown in Figure \ref{figure:cmna:abuse3} with the addition of Personal Conflict node}
-\label{figure:cmna:abuse4}
-\end{figure}
 
 \section{Summary}
 \TODO{Summary}

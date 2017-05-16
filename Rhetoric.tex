@@ -1,4 +1,4 @@
-\chapter{Rhetorical Extensions for Eristic Argument}
+\chapter{The Argumentation on the Social Web Ontology}
 \label{aswo}
 In the preliminary investigation, the capability of existing frameworks and their use in capturing and modelling argumentation and social communities was examined and evaluated \citep{Blount2014}. It became apparent that the AIF, while a powerful tool for modelling (dialectic) argument, lacked the ability to capture the eristic aspects of social argumentation. While some logical fallacies, such as the \textit{ad hominem} attack can be suitably modelled within the AIF, the rhetorical force of ``simple'' abuse is difficult to capture. 
 
@@ -7,24 +7,102 @@ However, there is reason to suggest that while such abuse (for example) may not 
 In addition, there are other socio-rhetorical tactics that are often employed on social media. These include spamming (posting large volumes of a repetitive nature) to drown out other posters, deliberate deviation from the topic at hand, bringing up non-sequiturs in an attempt to derail the argument and ``meta-argumentation'' -- criticising the way in which an opponent argues, but not the argument itself (e.g. if a user claims another is breaking the rules of the forum, or of not arguing in good faith). There are also the non-textual features of social media to consider; that is, the feature of posts other than their content. For example, the number of ``Likes'' or ``Favourites'' a post has, demonstrates popular (or audience) support for this opinion or position. 
 
 
-\section{The Argumentation on the Social Web Ontology}
+\section{Initial Proposals}
 \label{aswo:augmentations}
-Based on the observations made in Section \ref{investigation:results} and the proposals discussed in Section \ref{investigation:proposals}, the principal features from the AIF and SIOC ontologies are combined alongside means to model rhetorical tactics in the Argumentation on the Social Web Ontology (ASWO).
+
+\newcommand{\scaleProps}{0.7}
+
+\TODO{Discuss different proposals, pros and cons, why settled on final choice}
+
+%These results formed the basis for the work presented in the Workshop on Computational Models of Natural Argument, in which a number of suggestions on how these ontologies could be adapted to model the socio-rhetorical aspects of argumentation were proposed.
 
 The principal focus here is the inclusion of rhetorical support and attack. While these features are only one aspect of rhetorical argument, they feature heavily in eristic dialogue (particularly rhetorical attacks), showcase both the positive and negative aspects of rhetorical argument and are important due to the impact they can have within discussions on the social web and the culture surrounding it \citep{Blount2015}.
 
 Rhetorical support is often relatively benign. It can be used to show solidarity with other members of the dialogue, to incorporate oneself into a social group, or to encourage . Consider the extracts \textit{``bro fist bump''}, a short declaration of support for another user, and \textit{``I commend you for admitting that debt \& deficits are important...If only more [people] felt the way you do''}, which disagrees with the overall stance presented by their opponent, but commends them for conceding some common ground, in attempt to further dialectic argument.
 
-Conversely, rhetorical attacks are often extremely hostile. They differ from logical attacks by attacking the person behind the argument rather than the argument itself (this is not to be confused with an \textit{ad hominem} argument which attacks a person's argument by calling their character or credentials into question -- these are logical, even though they are fallacious). Rhetorical attacks often contain extremely vulgar language: consider the extracts \textit{``Some of you fucks need a good ass whipping''} and \textit{``Fuck off cunt''}. \TODO{Do I need to censor this?} The purpose of these statements can be interpreted in a number of ways, from intentionally silencing dissenting voices with threats, to showing the audience how impassioned and emotive the rhetor is on the subject, to cathartically blowing off steam.
+Conversely, rhetorical attacks are often extremely hostile. They differ from logical attacks by attacking the person behind the argument rather than the argument itself (this is not to be confused with an \textit{ad hominem} argument which attacks a person's argument by calling their character or credentials into question -- these are logical, even though they are fallacious). Rhetorical attacks often contain extremely vulgar language.
+%: consider the extracts \textit{``Some of you fucks need a good ass whipping''} and \textit{``Fuck off cunt''}. \TODO{Do I need to censor this?}
+The purpose of these statements can be interpreted in a number of ways, from showing the audience how impassioned and emotive the rhetor is on the subject, to cathartically blowing off steam, to intentionally silencing dissenting voices with threats.
 
-The notion of rhetorical support and attack is modelled by introducing three new types of nodes to the ontology. Firstly, as described in Section \ref{investigation:proposals}, it is not enough to use a UserAccount to represent a person during an argument$_2$. Instead, the Persona node represents a user's character and authority on a given subject, or rather the character and authority they present themselves to have online, and is bound to one or more UserAccounts. Two more node types are introduced to differentiate these types of rhetorical interaction from logical supports or attacks. PersonalConflict (PC-nodes) nodes link from a YA-node to a Persona node to denote this type of personal support and, likewise, PersonalSupport (PS-nodes) nodes follow the same structure to denote support of a person's intentions and character. These are broad, umbrella definitions that serve to catalogue all discovered variants of personal support and attack; they could of course be refined to differentiate between different subcategories of support, such as simple agreement, or self-support (through humour, etc.), or attack such as threats, insults, or provocations. A simple example of this is shown in Figure \ref{figure:graphs:aswo-personal-conflict}, which shows the same argument visualised in Figure \ref{figure:graphs:aifplus} (with the addition of User and Persona nodes) being rhetorically attacked by another user.
+Figure \ref{figure:cmna:abuse1} shows the simplest approach, similar to the current way the AIF models the use of \textit{ad hominem} attacks, by linking the attack to the opponent's argument$_1$ with a CA-node. However, this is insufficient for the majority of abusive attacks; while \textit{ad hominem} tactics attack an opponent's argument$_1$ by claiming they are not qualified, or otherwise unfit, to make such an argument$_1$, abuse often does not attack their position at all, but seeks to undermine them emotionally in front of their peers.
 
-\TODO{MOVED FIGURE}
+This mapping can be modelled by linking the content of the locution to the targeted user's account as shown in Figure \ref{figure:cmna:abuse2}. However, a UserAccount can be involved in any number of topics, and be attacked for any number of reasons. Furthermore, a person can choose to present themselves as a dramatically different person (having different credentials, skills, opinions or even race, religion or gender) when they are on the web as opposed to off. They may even choose to represent themselves differently between individual threads and discussions. To this end, another type of node is needed to represent the abstract notion of the ``persona'' a user presents.
 
-The ASWO also models reputation systems (i.e. Favourites, Likes and up- and down-votes); however, for simplicity, they are not modelled as nodes in the graph structure, but are included as literal values attached to the relevant Locution. In addition, because the SIOC ontology also accounts for replies to and from a post, the use of AIF TA-nodes has also been refined in relation to the social web. They now no longer need to be used whenever an L-node directly responds to another; instead they can be used solely to refer to ``transitions'' in the argument. These transitions are used when a Locution contributes to the argument$_2$ without providing any information, but instead helps move the discussion to the ``next stage'', usually by asking questions or prompting further debate. Note that these transitions don't necessarily move the discussion forwards, but can also be used to take the argument$_2$ around in circles.
+This is illustrated by Figure \ref{figure:cmna:abuse3}. Introducing the idea of personas allows each UserAccount to present a different view of themselves (that can be supported or attacked accordingly) when engaging in multiple discussions or topics.
+
+Figure \ref{figure:cmna:abuse4} \TODO{Shows persona nodes}
+
+Here, the key additions is the Persona node -- this represents ``character'' that they assume during the discussion. A person may argue in a different fashion in a debate about music than they would about technical expertise, for example. This allows one UserAccount to have many Personas where necessary. The inverse, linking one Persona to multiple UserAccounts, is also possible, and could represent a participant attempting to artificially solidify their position by creating multiple accounts.
 
 
-\section{Investigations}
+\begin{figure}
+\centering
+\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/abuse1.png}
+\caption{Proposal for representing abusive attacks as solely within the argument$_1$ structure}
+\label{figure:cmna:abuse1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/abuse2.png}
+\caption{Proposal for representing abusive attacks as connected with the social aspect of the argument$_2$, attacking the author directly}
+\label{figure:cmna:abuse2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/abuse3.png}
+\caption{Proposal for representing abusive attacks, extending that shown in Figure \ref{figure:cmna:abuse2} with the addition of Persona nodes}
+\label{figure:cmna:abuse3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{./figures/graphs/aswo-personal-conflict.png}
+\caption{Proposal for representing abusive attacks, extending that shown in Figure \ref{figure:cmna:abuse3} with the addition of Personal Conflict node}
+\label{figure:cmna:abuse4}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\TODO{while out of scope for this body of work, the topic of modelling social systems was also considered} \citep{Blount2014}. These proposals included suggestions for modelling social web specific features, such as the use of reputation systems (e.g. Likes or up/down-votes). Reputation systems make up a key aspect of non-verbal argumentation on the social web, allowing users to show agreement or disagreement to a position, sometimes anonymously, without the need to articulate their own position.
+
+Figure \ref{figure:cmna:likes1} shows one such approach; namely, modelling each vote as a separate Locution, linking to an I-node that either (logically) supports or attacks the voted-on post.
+
+Alternatively, Figure \ref{figure:cmna:likes2} shows an approach which aggregates this information into a single Reputation node. This has the advantage of keeping to social information distinct from the logical graph structure, but the disadvantage of omitting how much each UserAccount contributed to the reputation.
+
+The ASWO does model these  reputation systems; however, for simplicity, they are not modelled as nodes in the graph structure, but are included as literal values attached to the relevant Locution. 
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/likes2.png}
+\caption{Proposal for representing reputation systems by modelling up- and down-votes as individual Locutions}
+\label{figure:cmna:likes1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=\scaleProps]{./figures/cmna_proposals/likes1.png}
+\caption{Proposal for representing reputation systems with the introduction of a Reputation node}
+\label{figure:cmna:likes2}
+\end{figure}
+
+In addition, because the SIOC ontology also accounts for replies to and from a post, the use of AIF TA-nodes has also been refined in relation to the social web. They now no longer need to be used whenever an L-node directly responds to another; instead they can be used solely to refer to ``transitions'' in the argument. These transitions are used when a Locution contributes to the argument$_2$ without providing any information, but instead helps move the discussion to the ``next stage'', usually by asking questions or prompting further debate. Note that these transitions don't necessarily move the discussion forwards, but can also be used to take the argument$_2$ around in circles by asking questions in bad faith (or \textit{sealioning}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\TODO{TIE THESE BITS TOGETHER}
+
+%Based on the observations made in Section \ref{investigation:results} and the proposals discussed in Section \ref{investigation:proposals}, the principal features from the AIF and SIOC ontologies are combined alongside means to model rhetorical tactics in the Argumentation on the Social Web Ontology (ASWO).
+
+
+
+%The notion of rhetorical support and attack is modelled by introducing three new types of nodes to the ontology. Firstly, as described in Section \ref{investigation:proposals}, it is not enough to use a UserAccount to represent a person during an argument$_2$. Instead, the Persona node represents a user's character and authority on a given subject, or rather the character and authority they present themselves to have online, and is bound to one or more UserAccounts. Two more node types are introduced to differentiate these types of rhetorical interaction from logical supports or attacks. PersonalConflict (PC-nodes) nodes link from a YA-node to a Persona node to denote this type of personal support and, likewise, PersonalSupport (PS-nodes) nodes follow the same structure to denote support of a person's intentions and character. These are broad, umbrella definitions that serve to catalogue all discovered variants of personal support and attack; they could of course be refined to differentiate between different subcategories of support, such as simple agreement, or self-support (through humour, etc.), or attack such as threats, insults, or provocations. A simple example of this is shown in Figure \ref{figure:graphs:aswo-personal-conflict}, \TODO{MOVED FIGURE} which shows the same argument visualised in Figure \ref{figure:graphs:aifplus} (with the addition of User and Persona nodes) being rhetorically attacked by another user.
+
+
+\section{Investigation}
+\label{aswo:investigation}
 The ASWO, and the augmentations made to the AIF and SIOC ontologies, were trialled in an investigation to study the application of logical versus rhetorical techniques in eristic dialogue on the social web. As before, this investigation focused on three different areas of the social web, but used a much larger sample size than previously: in total, two hundred and seventy posts were collected and annotated. These were used to analyse the proportion of rhetorical contributions throughout the argument$_2$, analyse the relation between logical and rhetorical arguments$_1$ used, and compare the features of the annotation structure with the content of each post.
 
 
@@ -231,6 +309,3 @@ Overall & Number of replies to this post & Number of posts replied to & 0.417 & 
 \hline
 \end{tabular}
 \end{sidewaystable}
-
-\section{Summary}
-\TODO{Summarise this}

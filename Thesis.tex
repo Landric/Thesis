@@ -18,12 +18,21 @@
 \usepackage{longtable}
 \usepackage{alltt}
 \usepackage{tikz}
+\usepackage{changepage}
 \usetikzlibrary{arrows,shapes,automata,backgrounds,petri,shapes.geometric,positioning}
 %\removecolourlinks    % Uncomment this command to remove colour from any links
 \usepackage{bibentry}
 \nobibliography*
 \usepackage{color}
 \usepackage{soul}
+
+\newcolumntype{!}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+
 \DeclareRobustCommand{\TODO}[1]{{\sethlcolor{yellow}\hl{TODO: #1}}}
 \DeclareRobustCommand{\CITATION}{{\sethlcolor{cyan}\hl{CITATION NEEDED}}}
 
@@ -92,13 +101,16 @@ Based on these observations, future work will focus on extending the argumentati
 \input{Preliminary}
 \input{Rhetoric}
 \input{Expert}
+\input{Case}
 \input{Perception}
 %\input{Perception2}
 \input{Conclusions}
 
 \appendix
-\include{ExpertSheet}
-\include{SocialGraphs}
+\input{appendices/ExpertSheet}
+\input{appendices/SocialGraphs}
+\input{appendices/Threads}
+\input{appendices/QuestionBreakdown}
 \backmatter
 \bibliographystyle{apalike}
 \bibliography{library}

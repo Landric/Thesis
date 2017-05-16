@@ -267,8 +267,8 @@
 
 @INPROCEEDINGS{Blount2016rhetorical,
   author = {Tom Blount and David Millard and Mark Weal},
-  title = {An ontology for argumentation on the social web: rhetorical extensions
-	to the AIF},
+  title = {{An Ontology for Argumentation on the Social Web: Rhetorical Extensions
+	to the AIF}},
   booktitle = {International Conference on Computational Models of Argument},
   year = {2016},
   month = {June},
@@ -285,7 +285,7 @@
 
 @INPROCEEDINGS{blount2015role,
   author = {Blount, Tom and Millard, David E and Weal, Mark J},
-  title = {On the Role of Avatars in Argumentation},
+  title = {{On the Role of Avatars in Argumentation}},
   booktitle = {Proceedings of the 2015 Workshop on Narrative \& Hypertext},
   year = {2015},
   pages = {17--19},
@@ -601,8 +601,8 @@
 
 @INPROCEEDINGS{dunne2016heard,
   author = {Dunne, Paul E},
-  title = {I Heard You the First Time: Debate in Cacophonous Surroundings},
-  booktitle = {Computational Models of Argument: Proceedings of COMMA 2016},
+  title = {{I Heard You the First Time: Debate in Cacophonous Surroundings}},
+  booktitle = {{Computational Models of Argument: Proceedings of COMMA 2016}},
   year = {2016},
   volume = {287},
   pages = {287},
@@ -1757,6 +1757,17 @@
   volume = {14}
 }
 
+@ARTICLE{van2011human,
+  author = {Van Mieghem, Piet},
+  title = {Human psychology of common appraisal: The reddit score},
+  journal = {IEEE Transactions on Multimedia},
+  year = {2011},
+  volume = {13},
+  pages = {1404--1406},
+  number = {6},
+  publisher = {IEEE}
+}
+
 @ARTICLE{Verheij2005,
   author = {Verheij, Bart},
   title = {{Evaluating arguments based on Toulmin’s scheme}},
@@ -1912,6 +1923,19 @@
   year = {2011},
   pages = {286--297},
   organization = {Springer}
+}
+
+@ARTICLE{yee2007unbearable,
+  author = {Yee, Nick and Bailenson, Jeremy N and Urbanek, Mark and Chang, Francis
+	and Merget, Dan},
+  title = {The Unbearable Likeness of Being Digital: The Persistence of Nonverbal
+	Social Norms in Online Virtual Environments},
+  journal = {CyberPsychology \& Behavior},
+  year = {2007},
+  volume = {10},
+  pages = {115--121},
+  number = {1},
+  publisher = {Mary Ann Liebert, Inc. 2 Madison Avenue Larchmont, NY 10538 USA}
 }
 
 @MISC{Zielinski,

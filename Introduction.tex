@@ -11,7 +11,7 @@
 \section{Problem Space and Motivation}
 \label{introduction:problemspace}
 
-Argumentation is fundamental to human communication -- it is how people share new information and new ideas, and propose courses of action that see them carried out \citep{hahn2005circular, Moor2006}. As a result, there is a large amount of research on argumentation from a wide variety of disciplines and topics, including: philosophy, and the nature of fallacies and how they may be critically appraised \citep{tindale2007}; sociology, and the need to differentiate between classical logic and social argumentation due to the need for the capability to reason using only partial knowledge \citep{polos2002reasoning}; law, and the need for measures of certainty and belief when modelling and reasoning over assertions \citep{bertea2004certainty}; and artificial intelligence, and the use of agent-based systems such as dialogue games, as methods for reasoning over argument \citep{bench2007argumentation, karunatillake2008}.
+Argumentation is fundamental to human communication -- it is how people share new information and new ideas, and propose courses of action that see them carried out \citep{hahn2005circular, Moor2006}. As a result, there is a large amount of research on argumentation from a wide variety of disciplines and topics, including: philosophy, and the nature of fallacies and how they may be critically appraised \citep{tindale2007}; sociology, and the need to differentiate between classical logic and social argumentation due to the need for the capability to reason using only partial knowledge \citep{polos2002reasoning}; law, and the need for measures of certainty and belief when modelling and reasoning over assertions \citep{bertea2004certainty}; and artificial intelligence, and the use of agent-based systems such as dialogue games, as methods for reasoning over argument to determine the victor or the correct course of action \citep{bench2007argumentation, karunatillake2008}.
 
 Argumentation can be (broadly) separated into two categories based on the goals and intended outcome. Firstly, dialectic argument, in which the participants are engaged in rational discourse with the aim of either discovering the particular truth behind a matter, or formulating a solution or resolution for a set of circumstances \citep{kerferd1981}. Secondly, eristic argument, in which there is no clear goal and the participants are not trying to come to a resolution but are quarrelling with the aim of being seen to win, either in the eyes of their opponent or, more often, in the eyes of spectators \citep{kerferd1981, Jorgensen1998}. Arguments can shift between these two forms, or contain ``pockets'' of one form within the other. Orthogonally to this, there are the notions of logic and rhetoric. While often used in modern parlance as a pejorative term, rhetoric is simply the art of discourse, and convincing an audience to one's point of view based on one's knowledge of the topic at hand and, crucially, one's knowledge of the audience themselves (which clearly lends itself to the eristic form) whereas logic deals with reasoning between established facts (which lends itself to the dialectic form).
 
@@ -51,14 +51,34 @@ Question three revolves around the most appropriate means of representing rhetor
 Question four focuses on the practical implications of this work; that is to say, whether the users of social media perceive arguments using different logical and rhetorical tactics in different ways, and whether this drives them to engage in different manners. This makes it important to define the terms perception and engagement. Perception can be thought of as the way in which users understand the tone, persuasiveness, entertainment value or information content of an argument \citep{sundar2000}. Engagement, conversely, can be thought of as how likely they are to, and in which they respond to or participate in the argument itself. This not limited to replying to a post: users of social media can engage in multiple ways, including replying, sharing or voting \citep{markova2013}.
 
 
-\section{Contributions}
-The work discussed in this thesis has formed the basis of a number of papers, published in the workshop of Computational Models of Natural Argument \citep{Blount2014}, ACM Conference on Hypertext and Social Media \citep{Blount2015}, the workshop of Narrative and Hypertext \citep{Blount2015role} and the Conference of Computational Models of Argument \citep{Blount2016rhetorical}.
-
 \section{Report Structure}
 Background information on the topic area, both in argumentation and online behaviour, as well as the state of the research field at present, is discussed in Chapter \ref{background}.
 A preliminary investigation into the capabilities of current models of social argumentation, and an analysis of the results, is detailed in Chapter \ref{investigation}.
-This is expanded in Chapter \ref{aswo}, in which these models are developed and adapted to encompass further social and rhetorical information, and are used to examine the prevalence of a subset of rhetorical tactics in web-based argumentation and their correlation with machine readable features (such as post length, language, etc.).
-\TODO{Chapters EXPERT and PERCEPTION}
-In Chapter \ref{expert}, an expert review of the proposed changes to the 
-Chapter \ref{perception}
-Finally, Chapter \ref{conclusionsfuture} sums up the findings and outlines a plan for a final thesis and future work.
+In Chapter \ref{aswo}, these models are developed and adapted to encompass further social and rhetorical information, creating the Argumentation on the Social Web Ontology. This is used to examine the prevalence of a subset of rhetorical tactics in web-based argumentation and their correlation with machine readable features (such as post length, language, etc.). The model is developed further, with additional changes proposed, and review carried out in which experts in several relevant fields (argumentation modelling, linked-and-open data, the social web, and philosophy) were asked to complete a pair of modelling exercises both with and without,the new additions, and then asked a set of semi-structured questions about their experience.
+Chapter \ref{case} details further data collection and annotation from sources on the social web, this time in the context of discussions surrounding online news. Again, this data is analysed at a structural level, in terms of both the social structure and annotated techniques. A narrative analysis is then carried out, examining three individual threads as case studies.
+In Chapter \ref{perception}, the data gathered in Chapter \ref{case} is used to form the basis of an experiment into the perception of argumentation: how logical and rhetorical techniques affect the perception, and reaction to, arguments on social media.
+Finally, Chapter \ref{conclusionsfuture} summarises the overall findings of this body of work, discusses the implications, and makes some suggestions to how this work can be expanded in future.
+
+
+\section{Contributions}
+The work discussed in this thesis has formed the basis of a number of papers:
+
+\begin{itemize}
+\item \bibentry{Blount2014}
+
+This paper discusses the preliminary work carried out in Chapter \ref{investigation}, in which an existing model of argumentation is applied to a set of discussions on the social web, an its overall effectiveness evaluated.
+
+\item \bibentry{Blount2015}
+
+This work forms the first part of Chapter \ref{aswo}, in which the Argumentation on the Social Web Ontology is developed, and trialled on a sample of argument data taken from the social web.
+
+\item \bibentry{Blount2015role}
+
+This paper presents a position on one of the issues considered out of scope of the main body of work presented here: namely, do avatars - the visual representation of a person in a virtual world \citep{bailenson2004avatars} - affect they way in which people argue, or the way in which they perceive arguments from others.
+
+\item \bibentry{Blount2016rhetorical}
+
+This work concludes the work begun in \citep{Blount2015}, developing the model further and presenting an expert review of the proposed changes. This forms the final part of Chapter \ref{aswo}.
+
+
+\end{itemize}
